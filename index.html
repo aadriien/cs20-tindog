@@ -7,16 +7,21 @@
     <title>TinDog</title>
     <link rel="stylesheet" href="./styles/styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>#sidenav {display: none;}</style>
     <script>
         var openMenu = false;
         $(document).ready(() => {
             $("#hamburger").click(menuslide);
+            $("#closeMenu").click(menuslide);
+            $("sidenav").slideUp();
         });
         function menuslide () {
             if (!openMenu) {
                 $("#hamburger").attr("src", "./imgs/openmenu.png");
+                $("#sidenav").slideDown()
             } else {
                 $("#hamburger").attr("src", "./imgs/menu.png");
+                $("#sidenav").slideUp()
             }
             openMenu = !openMenu;
         }
@@ -49,17 +54,33 @@
                 <a href="care.html"><h4>Care Materials</h4></a>
             </div>
             <div class="box">
-                <a href="resources.html"><h4>Resources for Care</h4></a>
+                <a href="resources.html"><h4>Owner Resources</h4></a>
             </div>
             <div class="box">
-                <a href="about.html"><h4>About Us</h4></a>
+                <a href="about.html"><h4>About TinDog</h4></a>
             </div>
             <div class="box">
                 <a href="contact.html"><h4>Contact</h4></a>
             </div>
         </div>
     </header>
-    <div id="#sidenav"></div>
+    <div id="sidenav">
+        <a href="index.html">Home</a>
+        <br>
+        <a href="match.html">Our Dogs</a>
+        <br>
+        <a href="donate.html">Donate</a>
+        <br>
+        <a href="care.html">Care Materials</a>
+        <br>
+        <a href="resources.html">Owner Resources</a>
+        <br>
+        <a href="about.html">About TinDog</a>
+        <br>
+        <a href="contact.html">Contact Us</a>
+        <br>
+        <button id="closeMenu">&times;</button>
+    </div>
     <div class="main"></div>
 </body>
 </html>

@@ -20,6 +20,28 @@ body {
     padding-top: 8em;
 }
 
+#sidenav {
+    padding-top: 7em;
+    width: 250px;
+    background-color: #fd9eb9;
+    z-index: 9999;
+    margin-left: -.5em;
+    padding-left: .5em;
+}
+#sidenav a {
+    font-size: x-large;
+}
+#closeMenu {
+    font-size: 3em;
+    background-color: transparent;
+    border-color: transparent;
+    margin-left: 200px;
+}
+
+#closeMenu:hover {
+    color: #fff;
+}
+
 .nav {
     background-color: #fd9eb9;
     width: 100%;
@@ -70,5 +92,9 @@ header {
   }
 
   .box a:hover {
+      color: #fff;
+  }
+
+  #sidenav a:hover {
       color: #fff;
   }
