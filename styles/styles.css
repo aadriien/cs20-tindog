@@ -3,3 +3,72 @@
 body {
     font-family: Poppins, Arial, sans-serif;
 }
+
+.logoBar {
+    background-color: #fe3c72;
+    width: 100%;
+    margin: 0px;
+    margin-top: -1.2em;
+    padding-bottom: 2em;
+    height: 3.4em;
+    z-index: 999999;
+    position: relative;
+    align-items: center;
+}
+
+.main {
+    padding-top: 8em;
+}
+
+.nav {
+    background-color: #fd9eb9;
+    width: 100%;
+    font-size: 1.2em;
+    z-index: 999;
+    height: 3em;
+    position: relative;
+}
+
+a img {
+    height: 2em;
+    margin-left: .5em;
+}
+
+.logoBar h3 {
+    color: black;
+    font-size: 2em;
+}
+
+header {
+    width: 100vw;
+    margin: 0px;
+    margin-left: -.5em;
+    margin-top: -1em;
+    position: fixed;
+}
+.logoBar, .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    overflow: hidden;
+  }
+
+  .box {
+    /* flex: 1 1 150px;  Stretching: */
+    flex: 0 1 auto;
+    margin: 5px;
+    vertical-align: top;
+  }
+  .box h4 {
+      margin: .2em;
+  }
+
+  a {
+      text-decoration: none;
+      color: #000;
+      margin-bottom: 0;
+  }
+
+  .box a:hover {
+      color: #fff;
+  }

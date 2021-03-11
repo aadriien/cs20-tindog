@@ -5,8 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TinDog</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        var openMenu = false;
+        $(document).ready(() => {
+            $("#hamburger").click(menuslide);
+        });
+        function menuslide () {
+            if (!openMenu) {
+                $("#hamburger").attr("src", "./imgs/openmenu.png");
+            } else {
+                $("#hamburger").attr("src", "./imgs/menu.png");
+            }
+            openMenu = !openMenu;
+        }
+    </script>
 </head>
 <body>
-    main page (brief intro to TinDog)
+    <header>
+        <div class="logoBar">
+            <div class="box">
+                <a href="index.html"><img src="./imgs/tindoglogo.png"></a>
+            </div>
+            <div class="box">
+                <h3>TinDog</h3>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="box">
+                <img id="hamburger" style="height: 2em" src="./imgs/menu.png">
+            </div>
+            <div class="box">
+                <a href="index.html"><h4>Home</h4></a>
+            </div>
+            <div class="box">
+                <a href="match.html"><h4>Our Dogs</h4></a>
+            </div>
+            <div class="box">
+                <a href="donate.html"><h4>Donate</h4></a>
+            </div>
+            <div class="box">
+                <a href="care.html"><h4>Care Materials</h4></a>
+            </div>
+            <div class="box">
+                <a href="resources.html"><h4>Resources for Care</h4></a>
+            </div>
+            <div class="box">
+                <a href="about.html"><h4>About Us</h4></a>
+            </div>
+            <div class="box">
+                <a href="contact.html"><h4>Contact</h4></a>
+            </div>
+        </div>
+    </header>
+    <div id="#sidenav"></div>
+    <div class="main"></div>
 </body>
 </html>
