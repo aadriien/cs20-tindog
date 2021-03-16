@@ -7,13 +7,94 @@
     <title>TinDog</title>
     <link rel="stylesheet" href="./styles/styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <style>#sidenav {display: none;}</style>
+    <style>#sidenav {display: none;}
+           #slideshow {
+                float: right;
+                position: relative;
+                margin-top: -4em;
+                margin-right: 5em;
+                margin-left: 10em;
+                width: 24em;
+            }
+            @media only screen and (max-width: 896px) {
+                #slideshow {
+                    margin: auto auto;
+                    float: none;
+                    position: relative;
+                    width: 14em;
+                }
+            }
+            #slideshow img {
+                    width: inherit;
+                    border: solid 5px #fd9eb9;
+                    border-radius: 1em;
+                    background-color: #fe3c72;
+            }
+
+            .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Black see-through */
+            color: #f1f1f1;
+            width: 90%;
+            margin-left: 5%;
+            transition: .5s ease;
+            opacity:0;
+            font-size: 20px;
+            padding: 20px 5px;
+            margin-bottom: 1em;
+            text-align: center;
+            border-radius: 1em;
+            }
+
+            #slideshow:hover .overlay, #slideshow:focus .overlay {
+                opacity: 1;
+            }
+            #imgdiv {
+                padding-left: 0;
+                position: relative; 
+                height: 100px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #imgdiv::before {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), 
+                                            rgba(0, 0, 0, 0.5) ), 
+                                            url('./imgs/banner.jpeg');
+                background-size: cover;
+                position: absolute;
+                content: "";
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+                opacity: 0.60;
+            }
+            h1 {
+                position: relative;
+                color: #fff;
+                font-size: xx-large;
+                text-align: center;
+                
+            }
+            @media only screen and (max-width: 360px) {
+                h1 {
+                    font-size: x-large;
+                }
+            }
+    </style>
     <script>
         var openMenu = false;
+        var placeDogs = [63, 65, 15, 75, 121]
+        var idx = 0
+        var srcString = "./imgs/"
         $(document).ready(() => {
             $("#hamburger").click(menuslide);
             $("#closeMenu").click(menuslide);
-            $("sidenav").slideUp();
+            $("#sidenav").slideUp();
+            $("#slide").attr("src", srcString + placeDogs[0] + ".jpeg").delay(6000).fadeOut(1000, slideshow)
         });
         function menuslide () {
             if (!openMenu) {
@@ -24,6 +105,16 @@
                 $("#sidenav").slideUp()
             }
             openMenu = !openMenu;
+        }
+        function showlink() {
+
+        }
+        function slideshow () {
+            idx = (idx + 1) % 5
+            $("#slide").attr("src", srcString + placeDogs[idx] + ".jpeg")
+                       .fadeIn(1000, () => {
+                            $("#slide").delay(6000).fadeOut(1000, slideshow)
+                        })
         }
     </script>
 </head>
@@ -83,24 +174,34 @@
     </header>
     
     <div class="main">
-        <h1>TinDog: Helping you find the perfect match</h1>
-        <h2>Making man's best friend even better</h2>
-        <p>
-            Our mission is to help owners find the perfect dog for whatever
-            situation they find themselves in, and to make sure every dog has a 
-            happy home.
-        </p>
-        <h3>
-            Interested? <a href="match.html">Meet our dogs!</a>
-        </h3>
-        <div id="donate">
-            <h3>
-                TinDog relies upon your support to stay running!
-            </h3>
-            <p>If you like our service, please consider <a href="donate.html">donating!</a></p>
-            <button>Donate Now!</button>
+        <div id="imgdiv">
+            <h1>TinDog: Helping you find the perfect match</h1>
         </div>
-        
+        <div id="text">
+            <h2>Making man's best friend even better</h2>
+            <div id="slideshow">
+                <img id="slide" src="">
+                <div class="overlay"><a href="match.html">Meet our dogs!</a></div>
+            </div>
+            <p>
+                Our mission is to help owners find the perfect dog for whatever
+                situation they find themselves in, and to make sure every dog has a 
+                happy home.
+            </p>
+            <h3>
+                Interested? <a href="match.html">Meet our dogs!</a>
+            </h3>
+            <div id="donate">
+                <h3>
+                    TinDog relies upon your support to stay running!
+                </h3>
+                <p>If you like our service, please consider <a href="donate.html">donating!</a></p>
+                <form action="donate.html" method="get" id="btnform">
+                    <button id="donatebtn">Donate Now!</button>
+                </form>
+                <br>
+            </div>
+        </div>
     </div>
 </body>
 </html>

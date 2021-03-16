@@ -4,9 +4,344 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TinDog</title>
+    <title>TinDog Match</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>
+            #sidenav {display: none;}
+            #imgdiv {
+                padding-left: 0;
+                position: relative; 
+                height: 100px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #imgdiv::before {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), 
+                                            rgba(0, 0, 0, 0.5) ), 
+                                            url('./imgs/banner.jpeg');
+                background-size: cover;
+                position: absolute;
+                content: "";
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+                opacity: 0.60;
+            }
+            h1 {
+                position: relative;
+                color: #fff;
+                font-size: xx-large;
+                text-align: center;
+                
+            }
+            @media only screen and (max-width: 360px) {
+                h1 {
+                    font-size: x-large;
+                }
+            }
+
+            #dogCards {
+                margin: auto auto;
+                display: grid;
+                grid-template: auto / auto auto auto;
+            }
+            @media only screen and (max-width: 1060px) {
+                #dogCards {
+                    grid-template: auto/ auto auto;
+                }
+            }
+            @media only screen and (max-width: 720px) {
+                #dogCards {
+                    grid-template: auto/ auto;
+                }
+            }
+            .specifics {
+                display: grid;
+                grid-template: auto auto / auto auto;
+            }
+            .specifics p {
+                margin: auto .2em;
+            }
+            .card {
+                border-radius: 1em;
+                margin: 0 auto 1em auto;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+                width: 20em;
+            }
+            .card img {
+                width: inherit;
+                border-radius: inherit;
+            }
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+            .info {
+                padding: 2px 16px;
+            }
+
+    </style>
+    <script>
+        var openMenu = false;
+        var srcString = "https://placedog.net/400/400?id="
+        var originalDogArr = [
+                            {
+                                "name": "Jeffrey",
+                                "img": "121",
+                                "breed": "Beagle",
+                                "age": "5",
+                                "size": "S",
+                                "favoriteToy": "Frisbee",
+                                "type": "Relaxed"
+                            },
+                            {
+                                "name": "Arlo",
+                                "img": "15",
+                                "breed": "Australian Shepherd",
+                                "age": "2",
+                                "size": "M",
+                                "favoriteToy": "Tennis Ball",
+                                "type": "Active"
+                            },
+                            {
+                                "name": "Griffin",
+                                "img": "160",
+                                "breed": "Husky",
+                                "age": "1",
+                                "size": "S",
+                                "type": "Active",
+                                "favoriteToy": "Stuffed Dragon"
+                            },
+                            {
+                                "name": "Harriet",
+                                "img": "65",
+                                "breed": "Husky",
+                                "age": "3",
+                                "size": "L",
+                                "type": "Active",
+                                "favoriteToy": "Rope"
+                            },
+                            {
+                                "name": "Meghan",
+                                "img": "172",
+                                "breed": "Golden Retriever",
+                                "age": "6",
+                                "size": "L",
+                                "type": "Active",
+                                "favoriteToy": "Football"
+                            },
+                            {
+                                "name": "Beth",
+                                "img": "75",
+                                "breed": "Corgi",
+                                "age": "1",
+                                "size": "S",
+                                "type": "Relaxed",
+                                "favoriteToy": "Rubber Duck"
+                            },
+                            {
+                                "name": "Ryan",
+                                "img": "18",
+                                "breed": "Golden Retriever",
+                                "age": "2",
+                                "size": "L",
+                                "type": "Active",
+                                "favoriteToy": "Socks"
+                            },
+                            {
+                                "name": "Joan",
+                                "img": "122",
+                                "breed": "Spaniel",
+                                "age": "2",
+                                "size": "S",
+                                "type": "Relaxed",
+                                "favoriteToy": "Sticks"
+                            },
+                            {
+                                "name": "Mike",
+                                "img": "63",
+                                "breed": "Bulldog",
+                                "age": "4",
+                                "size": "S",
+                                "type": "Relaxed",
+                                "favoriteToy": "Stuffed Moon"
+                            }
+                        ]
+        var dogArr = originalDogArr;
+        
+        $(document).ready(() => {
+            $("#hamburger").click(menuslide);
+            $("#closeMenu").click(menuslide);
+            $("#sidenav").slideUp();
+            $(".card").click(() => {
+                console.log("click");
+                var email = 'tindog@mailinator.com';
+                var subject = this.attr('id');
+                window.location = 'mailto:' + email + '?subject=' + subject;
+            })
+            $("#type").change(() => {
+                updateDogs();
+            })
+            $("#size").change(() => {
+                updateDogs();
+            })
+            dogScript(dogArr);
+        });
+        function menuslide () {
+            if (!openMenu) {
+                $("#hamburger").attr("src", "./imgs/openmenu.png");
+                $("#sidenav").slideDown()
+            } else {
+                $("#hamburger").attr("src", "./imgs/menu.png");
+                $("#sidenav").slideUp()
+            }
+            openMenu = !openMenu;
+        }
+        function dogScript(dogArr) {
+            $("#dogCards").html('')
+            let html = ""
+            for (let d of dogArr) {
+                let size = d.size;
+                switch (size) {
+                    case "S":
+                        size = "Small"
+                        break;
+                    case "M":
+                        size = "Medium"
+                        break;
+                    default: // L
+                        size = "Large"
+                        break;
+                }
+                html +=     `<div class="card" id='${d.name}'>
+                                <img src="${srcString + d.img}">
+                                <div class="info"> 
+                                <h3 style="margin: 0 auto">${d.name}, ${d.age}</h3>
+                                    <div class="specifics">
+                                        <p><strong>Breed:</strong> ${d.breed}</p>
+                                        <p><strong>Size:</strong> ${size}</p>
+                                        <p><strong>Demeanor:</strong> ${d.type}</p>
+                                        <p><strong>Favorite Toy:</strong> ${d.favoriteToy}</p>
+                                    </div>
+                                </div>
+                            </div>`
+            }
+            $("#dogCards").html(html);
+        }
+        function updateDogs() {
+            let type = $("#type option:selected").text()
+            let size = $("#size option:selected").text()
+            let newDogArr = originalDogArr;
+            newDogArr = newDogArr.filter((d) => {
+                console.log(d.type)
+                console.log(type)
+                console.log(d.size)
+                console.log(size)
+                if (d.type !== type && type !== "All") {
+                    return false;
+                } else if (d.size !== size && size !== "All") {
+                    return false;
+                }
+                return true;
+            })
+            dogScript(newDogArr)
+        }
+    </script>
 </head>
 <body>
-    Match - most js will be here along with the form
+    <header>
+        <div class="logoBar">
+            <div class="box">
+                <a href="index.html"><img src="./imgs/tindoglogo.png"></a>
+            </div>
+            <div class="box">
+                <h3>TinDog</h3>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="box">
+                <img id="hamburger" style="height: 2em" src="./imgs/menu.png">
+            </div>
+            <div class="box">
+                <a href="index.html"><h4>Home</h4></a>
+            </div>
+            <div class="box">
+                <a href="match.html"><h4>Our Dogs</h4></a>
+            </div>
+            <div class="box">
+                <a href="donate.html"><h4>Donate</h4></a>
+            </div>
+            <div class="box">
+                <a href="care.html"><h4>Care Materials</h4></a>
+            </div>
+            <div class="box">
+                <a href="resources.html"><h4>Owner Resources</h4></a>
+            </div>
+            <div class="box">
+                <a href="about.html"><h4>About TinDog</h4></a>
+            </div>
+            <div class="box">
+                <a href="contact.html"><h4>Contact</h4></a>
+            </div>
+        </div>
+        <div id="sidenav">
+            <a href="index.html">Home</a>
+            <br>
+            <a href="match.html">Our Dogs</a>
+            <br>
+            <a href="donate.html">Donate</a>
+            <br>
+            <a href="care.html">Care Materials</a>
+            <br>
+            <a href="resources.html">Owner Resources</a>
+            <br>
+            <a href="about.html">About TinDog</a>
+            <br>
+            <a href="contact.html">Contact Us</a>
+            <br>
+            <button id="closeMenu">&times;</button>
+        </div>
+    </header>
+    
+    <div class="main">
+        <div id="imgdiv">
+            <h1>Match with Dogs</h1>
+        </div>
+        <div id="text" style="text-align: center;">
+            <h2>Find the right dog for you! If you see one you like, <a href="contact.html">contact us</a> for more info!</h2>
+            <div id="form">
+                <label for="type">Demeanor:</label>
+                <select name="type" id="type">
+                    <option>All</option>
+                    <option>Relaxed</option>
+                    <option>Active</option>
+                </select>
+                <label for="size">Size:</label>
+                <select name="size" id="size">
+                    <option>All</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                </select>
+            </div>
+            <br>
+            <div id="dogCards">
+            </div>
+            <div id="donate">
+                <h3>
+                    TinDog relies upon your support to stay running!
+                </h3>
+                <p>If you like our service, please consider <a href="donate.html">donating!</a></p>
+                <form action="match.html" method="get" id="btnform">
+                    <button id="donatebtn">Donate Now!</button>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
