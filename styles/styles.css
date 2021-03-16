@@ -106,3 +106,34 @@ header {
   #sidenav a:hover {
       color: #fff;
   }
+  
+  .accordion {
+  background-color: #ccc;
+  color: #000;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #000;
+  outline: none;
+  transition: 0.6s;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  text-align: center;
+  display: none;
+  overflow: hidden;
+}
+
+.active, .accordion:hover {
+  background-color: #fd9eb9;
+}
+
+
+
+  
+  
