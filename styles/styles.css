@@ -164,3 +164,62 @@ header {
         width: 100%;
     }
 }
+
+#imgdiv {
+    padding-left: 0;
+    position: relative; 
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#imgdiv::before {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), 
+                                rgba(0, 0, 0, 0.5) ), 
+                                url('../imgs/banner.jpeg');
+    background-size: cover;
+    position: absolute;
+    content: "";
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.60;
+}
+h1 {
+    position: relative;
+    color: #fff;
+    font-size: x-large;
+    text-align: center;
+    
+}
+@media only screen and (max-width: 360px) {
+    h1 {
+        font-size: large;
+    }
+}
+
+.contentRow, .contentRowRev {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 1em 2em;
+}
+.contentRow img {
+    object-fit: contain;
+    margin-right: 2em;
+}
+
+@media only screen and (max-width: 896px) {
+    .contentRow{
+        flex-wrap: wrap;
+    }
+    .contentRowRev {
+        flex-wrap: wrap-reverse;
+    }
+    .contentRow img {
+        object-fit: contain;
+        margin-right: 0;
+    }
+}

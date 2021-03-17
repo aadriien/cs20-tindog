@@ -6,8 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css">
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>#sidenav{display:none}</style>
     <title>TinDog: Resources</title>
+    <script>
+        var openMenu = false;
+        $(document).ready(() => {
+           $("#hamburger").click(menuslide);
+           $("#closeMenu").click(menuslide);
+           $("#sidenav").slideUp();
+       });
+       function menuslide () {
+           if (!openMenu) {
+               $("#hamburger").attr("src", "./imgs/openmenu.png");
+               $("#sidenav").slideDown()
+           } else {
+               $("#hamburger").attr("src", "./imgs/menu.png");
+               $("#sidenav").slideUp()
+           }
+           openMenu = !openMenu;
+       }
+   </script>
 </head>
 
 <body>
@@ -22,6 +41,9 @@
             </div>
         </div>
         <div class="nav">
+            <div class="box">
+                <img id="hamburger" style="height: 2em" src="./imgs/menu.png">
+            </div>
             <div class="box">
                 <a href="index.html"><h4>Home</h4></a>
             </div>
@@ -44,173 +66,189 @@
                 <a href="contact.html"><h4>Contact</h4></a>
             </div>
         </div>
+        <div id="sidenav">
+            <a href="index.html">Home</a>
+            <br>
+            <a href="match.html">Our Dogs</a>
+            <br>
+            <a href="donate.html">Donate</a>
+            <br>
+            <a href="care.html">Care Materials</a>
+            <br>
+            <a href="resources.html">Owner Resources</a>
+            <br>
+            <a href="about.html">About TinDog</a>
+            <br>
+            <a href="contact.html">Contact Us</a>
+            <br>
+            <button id="closeMenu">&times;</button>
+        </div>
     </header>
-    
-    
-    <br/><br/><br/><br/><br/>
-    
-    <h1 style="margin-left: 40px; font-size: 35px">Resources for your four-legged friend</h1>
-    
-    <img style="float: right; margin-left: 80px; margin-right: 60px;
-    border: 2px solid #000; max-height: 350px;" 
-    src="https://images.unsplash.com/photo-1544568100-847a948585b9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80"
-    alt="dog with brown fur smiling with tongue sticking out">
-    
-    <br/><br/>
-    
-    <p style="font-size: 25px; text-align: center; margin-left: 60px; margin-right: 60px">
-        We understand that a new family member can be something of a handful.
-        But that's where we'd like to help! Be sure to check out our 
-        fantastic tips and tricks for welcoming a new dog into your 
-        household environment. And if you'd like to do a bit of extra reading, 
-        stop by some of our recommended sites. Our tried-and-tested advice is 
-        guaranteed to put a smile on your face!
-    </p>
-    
-    <br/><br/><br/><hr>
-
-    
-    
-    <p style="font-size: 30px; text-align: center;">
-        Frequently Asked Questions (FAQs):
-    </p>
-    <button class="accordion">When will my dog need to visit the veterinarian?</button>
-        <div class="panel">
-            <p>Upon first bringing your dog home, it's best to arrange a 
-            physical exam with a local vet as soon as possible. This will give 
-            you a chance to register your pup with a professional provider,
-            review your dog's health history, and discuss any concerns you may
-            have. It's important that you continue to bring your furry friend
-            in for a check up each year to ensure that there are no underlying 
-            issues. Your pup won't be able to tell you if something is 
-            wrong, so your best bet is to be proactive!</p>
+    <div class='main'>
+        <div id='imgdiv'>
+            <h1>Resources for your four-legged friend</h1>
         </div>
-
-    <button class="accordion">What should I feed my dog?</button>
-        <div class="panel">
-            <p>It can be difficult to get a footing on pet food when there are 
-            just so many options available! If you're bringing home a puppy,
-            it's best to seek out commcercial "growth" food from a reputable
-            brand. Certain dog breeds might require different kinds of 
-            nutrition depending on their size and dietary needs. There are a 
-            number of wonderful sites that provide valuable insight on this topic 
-            (see our section on <a href="#additional"><u>additional resources</u></a>). 
-            When in doubt, consult your veterinarian; they are happy to help!</p>
-        </div>
-
-    <button class="accordion">Is it necessary to train and/or socialize my dog?</button>
-        <div class="panel">
-            <p>Here are TinDog, we think it of the utmost importance that 
-            our furry friends are well-socialized. These positive experiences
-            with humans and other dogs alike are critical in a dog's 
-            healthy development. From walking around the neighborhood to 
-            visiting local dog parks to enrolling in puppy classes, new 
-            environments with new people is the way to go! But of course, if 
-            your dog is visiting new places, it's best that they have some 
-            level of training! Walking on a leash, responding to cues of "sit", 
-            "stay", etc. are basic skills that we'd strongly recommend you 
-            work with. But remember: positive reinforcement (treats, praise) is 
-            truly the tried-and-tested method. So whether you're beginning 
-            your training at home or with a professional, make sure you are 
-            encouraging the behavior that you want to see!</p>
+    
+        <div class='contentRow'>
+            <img style="border: 5px solid #fd9eb9; width: 40vw; border-radius: 1em;" 
+            src="https://images.unsplash.com/photo-1544568100-847a948585b9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80"
+            alt="dog with brown fur smiling with tongue sticking out">
+            <p style="font-size: 1.2em; text-align: center; margin-top: 2em;">
+                We understand that a new family member can be something of a handful.
+                But that's where we'd like to help! Be sure to check out our 
+                fantastic tips and tricks for welcoming a new dog into your 
+                household environment. And if you'd like to do a bit of extra reading, 
+                stop by some of our recommended sites. Our tried-and-tested advice is 
+                guaranteed to put a smile on your face!
+            </p>
         </div>
         
-    <button class="accordion">How much attention will my dog need?</button>
-        <div class="panel">
-            <p>Dogs are incredibly curious and sociable animals. They
-            get attached to their humans, and they feel sad when their 
-            humans are gone! Thus if a pet dog is your calling, it's 
-            critical that you ensure that your lifestyle is ready to 
-            accommodate a fairly-needy family member. Much like small 
-            human children, our furry friends require both physical and 
-            mental exercise; whether it's going for a daily walk, playing 
-            a few games of chase or tug-of-war, or snuggling up on the couch,
-            your pup will appreciate the time you two spend together. During 
-            times when you need to leave the house, be sure to provide 
-            safe chew toys, a food puzzle, or a visit from a dog walker if 
-            you'll be gone for the majority of the day. If you need to 
-            leave home for a period of travel, make plans for a qualified 
-            pet sitter to visit the house and provide care.</p>
-        </div>
-        
-    <button class="accordion">Are dogs expensive? How much money can I anticipate spending?</button>
-        <div class="panel">
-            <p>While the cost of caring for a pet can vary greatly from owner to
-            owner, most aspiring dog owners should plan to spend upwards of 
-            $500-2,000 on the initial expenses to adopt, purchase supplies, and 
-            connect with a veterinarian for a new-puppy check up. Additional 
-            medical costs such as spaying/neutering, heartworm medication, etc. 
-            will further contribute to the bill, and if you seek pet insurance 
-            (which is generally recommended, as it resembles human health 
-            insurance), then that will incur additional costs. It then becomes 
-            necessary to account for money spent each month on replenishing food, 
-            toys, etc. And of course, if travel is in your future, you should 
-            also anticipate the cost of a pet sitter. Because of this, most pet 
-            owners find that a dog requires anywhere between $800-3,000 of 
-            annual care.</p>
-        </div>
+        <br/><br/><hr>
+    
         
         
-    <script language="javascript">
-        var accordion = document.getElementsByClassName("accordion");
-
-        for (var i = 0; i < accordion.length; i++) {
-            accordion[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-
-                var panel = this.nextElementSibling;
-            
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } 
-                else {
-                    panel.style.display = "block";
-                }
-            });
-        }
-    </script>
-    
-    
-    <br/><hr><br/>
-    
-    <img style="float: left; margin-left: 60px; margin-right: 45px;
-    margin-top: 30px; border: 2px solid #000; max-height: 300px;" 
-    src="https://images.unsplash.com/photo-1554730503-c2e21388b62a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80"
-    alt="dog with floppy ears chewing on a bone">
-    
-    
-    <br/>
-    
-    <p style="font-size: 25px; text-align: center">
-        <strong>Looking for additional resources? Visit the sites below!</strong>
-    </p>
-
-    
-    <p style="font-size: 23px; text-align: center;">
-        <a id="additional"><a href="https://www.rover.com/blog/"
-        target="_blank">The Dog People</a>
-        <br/>
-        <a href="https://www.bringfido.com"
-        target="_blank">Bring Fido</a>
-        <br/>
-        <a href="https://resources.bestfriends.org/pet-health/dogs-health"
-        target="_blank">Best Friends Animal Society</a>
-        <br/>
-        <a href="https://muttropolis.com"
-        target="_blank">Muttropolis</a>
-        <br/>
-        <a href="https://www.purina.com/articles/puppy"
-        target="_blank">Puppyhood by Purina</a>
-    </p>
-    
-    <br/><br/><br/><hr><br/>
-        <p style="font-size: 22px; text-align: center">
-            Still confused? That's okay! There's certainly <em>a lot</em> of 
-            information to take in. Feel free to <a href="./contact.html">
-            <u>contact us</u></a> with any questions!
+        <p style="font-size: 30px; text-align: center;">
+            Frequently Asked Questions (FAQs):
         </p>
+        <button class="accordion">When will my dog need to visit the veterinarian?</button>
+            <div class="panel">
+                <p>Upon first bringing your dog home, it's best to arrange a 
+                physical exam with a local vet as soon as possible. This will give 
+                you a chance to register your pup with a professional provider,
+                review your dog's health history, and discuss any concerns you may
+                have. It's important that you continue to bring your furry friend
+                in for a check up each year to ensure that there are no underlying 
+                issues. Your pup won't be able to tell you if something is 
+                wrong, so your best bet is to be proactive!</p>
+            </div>
     
-    <br/><br/><br/>
+        <button class="accordion">What should I feed my dog?</button>
+            <div class="panel">
+                <p>It can be difficult to get a footing on pet food when there are 
+                just so many options available! If you're bringing home a puppy,
+                it's best to seek out commcercial "growth" food from a reputable
+                brand. Certain dog breeds might require different kinds of 
+                nutrition depending on their size and dietary needs. There are a 
+                number of wonderful sites that provide valuable insight on this topic 
+                (see our section on <a href="#additional"><u>additional resources</u></a>). 
+                When in doubt, consult your veterinarian; they are happy to help!</p>
+            </div>
+    
+        <button class="accordion">Is it necessary to train and/or socialize my dog?</button>
+            <div class="panel">
+                <p>Here are TinDog, we think it of the utmost importance that 
+                our furry friends are well-socialized. These positive experiences
+                with humans and other dogs alike are critical in a dog's 
+                healthy development. From walking around the neighborhood to 
+                visiting local dog parks to enrolling in puppy classes, new 
+                environments with new people is the way to go! But of course, if 
+                your dog is visiting new places, it's best that they have some 
+                level of training! Walking on a leash, responding to cues of "sit", 
+                "stay", etc. are basic skills that we'd strongly recommend you 
+                work with. But remember: positive reinforcement (treats, praise) is 
+                truly the tried-and-tested method. So whether you're beginning 
+                your training at home or with a professional, make sure you are 
+                encouraging the behavior that you want to see!</p>
+            </div>
+            
+        <button class="accordion">How much attention will my dog need?</button>
+            <div class="panel">
+                <p>Dogs are incredibly curious and sociable animals. They
+                get attached to their humans, and they feel sad when their 
+                humans are gone! Thus if a pet dog is your calling, it's 
+                critical that you ensure that your lifestyle is ready to 
+                accommodate a fairly-needy family member. Much like small 
+                human children, our furry friends require both physical and 
+                mental exercise; whether it's going for a daily walk, playing 
+                a few games of chase or tug-of-war, or snuggling up on the couch,
+                your pup will appreciate the time you two spend together. During 
+                times when you need to leave the house, be sure to provide 
+                safe chew toys, a food puzzle, or a visit from a dog walker if 
+                you'll be gone for the majority of the day. If you need to 
+                leave home for a period of travel, make plans for a qualified 
+                pet sitter to visit the house and provide care.</p>
+            </div>
+            
+        <button class="accordion">Are dogs expensive? How much money can I anticipate spending?</button>
+            <div class="panel">
+                <p>While the cost of caring for a pet can vary greatly from owner to
+                owner, most aspiring dog owners should plan to spend upwards of 
+                $500-2,000 on the initial expenses to adopt, purchase supplies, and 
+                connect with a veterinarian for a new-puppy check up. Additional 
+                medical costs such as spaying/neutering, heartworm medication, etc. 
+                will further contribute to the bill, and if you seek pet insurance 
+                (which is generally recommended, as it resembles human health 
+                insurance), then that will incur additional costs. It then becomes 
+                necessary to account for money spent each month on replenishing food, 
+                toys, etc. And of course, if travel is in your future, you should 
+                also anticipate the cost of a pet sitter. Because of this, most pet 
+                owners find that a dog requires anywhere between $800-3,000 of 
+                annual care.</p>
+            </div>
+            
+            
+        <script language="javascript">
+            var accordion = document.getElementsByClassName("accordion");
+    
+            for (var i = 0; i < accordion.length; i++) {
+                accordion[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+    
+                    var panel = this.nextElementSibling;
+                
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } 
+                    else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
+        </script>
+        
+        
+        <br/><hr><br/>
+        
+        <div class='contentRow'>
+            <img style="border: 5px solid #fd9eb9; width: 40vw; border-radius: 1em;" 
+            src="https://images.unsplash.com/photo-1554730503-c2e21388b62a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80"
+            alt="dog with floppy ears chewing on a bone">
+            <div>
+                <p style="font-size: 1.6em; text-align: center">
+                    <strong>Looking for additional resources? Visit the sites below!</strong>
+                </p>
+                
+                <p style="margin-top: -1em; font-size: 1.2em; text-align: center;">
+                    <a id="additional"><a href="https://www.rover.com/blog/"
+                    target="_blank">The Dog People</a>
+                    <br/>
+                    <a href="https://www.bringfido.com"
+                    target="_blank">Bring Fido</a>
+                    <br/>
+                    <a href="https://resources.bestfriends.org/pet-health/dogs-health"
+                    target="_blank">Best Friends Animal Society</a>
+                    <br/>
+                    <a href="https://muttropolis.com"
+                    target="_blank">Muttropolis</a>
+                    <br/>
+                    <a href="https://www.purina.com/articles/puppy"
+                    target="_blank">Puppyhood by Purina</a>
+                </p>
+            </div>
+        </div>
+        
+        
+        <br/><br/><hr><br/>
+            <p style="font-size: 22px; text-align: center">
+                Still confused? That's okay! There's certainly <em>a lot</em> of 
+                information to take in. Feel free to <a href="./contact.html">
+                <u>contact us</u></a> with any questions!
+            </p>
+        
+        <br/><br/><br/>
+    </div>
+    
+    
     
 </body>
 
