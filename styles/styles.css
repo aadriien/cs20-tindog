@@ -220,7 +220,7 @@ h1 {
         flex-wrap: wrap-reverse;
     }
     .contentRow img {
-        object-fit:  contain;
+        object-fit: contain;
         margin-right: 0;
     }
     .contentRowRev img {
