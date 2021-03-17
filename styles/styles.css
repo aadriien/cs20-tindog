@@ -106,3 +106,41 @@ header {
   #sidenav a:hover {
       color: #fff;
   }
+
+
+/* About us Page */
+.slogan-container {
+    padding-top: 11em;
+    text-align: center;
+}
+
+#slogan {
+  font-size: 80px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  margin-bottom: 5px;
+}
+
+#slogan-caption {
+  font-size: 25px;
+  font-weight: bold;
+
+  margin: 3px auto 25px;
+}
+
+.about-container {
+  margin: 6em auto 100px;
+  padding-top: 1em;
+  line-height: 2;
+
+  background-color: #ef8172;
+  text-align: center;
+}
+
+#profile-pics {
+  width: 15%;
+  border-radius: 100%;
+
+  margin: 15px;
+}

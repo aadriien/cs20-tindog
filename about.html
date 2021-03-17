@@ -5,9 +5,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TinDog</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>#sidenav {display: none;}</style>
+    <script>
+        var openMenu = false;
+        $(document).ready(() => {
+            $("#hamburger").click(menuslide);
+            $("#closeMenu").click(menuslide);
+            $("sidenav").slideUp();
+        });
+        function menuslide () {
+            if (!openMenu) {
+                $("#hamburger").attr("src", "./imgs/openmenu.png");
+                $("#sidenav").slideDown()
+            } else {
+                $("#hamburger").attr("src", "./imgs/menu.png");
+                $("#sidenav").slideUp()
+            }
+            openMenu = !openMenu;
+        }
+    </script>
+
 </head>
 <body>
-    about TinDog - more detailed info, form for newsletter?
-    test
+  <header>
+      <div class="logoBar">
+          <div class="box">
+              <a href="index.html"><img src="./imgs/tindoglogo.png"></a>
+          </div>
+          <div class="box">
+              <h3>TinDog</h3>
+          </div>
+      </div>
+      <div class="nav">
+          <div class="box">
+              <img id="hamburger" style="height: 2em" src="./imgs/menu.png">
+          </div>
+          <div class="box">
+              <a href="index.html"><h4>Home</h4></a>
+          </div>
+          <div class="box">
+              <a href="match.html"><h4>Our Dogs</h4></a>
+          </div>
+          <div class="box">
+              <a href="donate.html"><h4>Donate</h4></a>
+          </div>
+          <div class="box">
+              <a href="care.html"><h4>Care Materials</h4></a>
+          </div>
+          <div class="box">
+              <a href="resources.html"><h4>Owner Resources</h4></a>
+          </div>
+          <div class="box">
+              <a href="about.html"><h4>About TinDog</h4></a>
+          </div>
+          <div class="box">
+              <a href="contact.html"><h4>Contact</h4></a>
+          </div>
+      </div>
+      <div id="sidenav">
+          <a href="index.html">Home</a>
+          <br>
+          <a href="match.html">Our Dogs</a>
+          <br>
+          <a href="donate.html">Donate</a>
+          <br>
+          <a href="care.html">Care Materials</a>
+          <br>
+          <a href="resources.html">Owner Resources</a>
+          <br>
+          <a href="about.html">About TinDog</a>
+          <br>
+          <a href="contact.html">Contact Us</a>
+          <br>
+          <button id="closeMenu">&times;</button>
+      </div>
+  </header>
+
+  <div class="slogan-container">
+    <p id='slogan'>We are TinDog.</p>
+    <p id='slogan-caption'>Let us introduce ourselves.</p>
+  </div>
+
+  <div class="about-container">
+    <div class="pic-container">
+      <img id="profile-pics" src="./imgs/larry.jpg" alt="">
+      <img id="profile-pics" src="./imgs/profile.png" alt="">
+      <img id="profile-pics" src="./imgs/profile.png" alt="">
+      <img id="profile-pics" src="./imgs/profile.png" alt="">
+    </div>
+  </div>
+
 </body>
 </html>
