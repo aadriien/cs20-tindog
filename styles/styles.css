@@ -112,7 +112,175 @@ header {
   #sidenav a:hover {
       color: #fff;
   }
-  
+
+/* About us Page */
+.slogan-container {
+    padding-top: 3em;
+    text-align: center;
+}
+
+#slogan {
+  font-size: 80px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  margin-bottom: 5px;
+}
+
+#slogan-caption {
+  font-size: 25px;
+  font-weight: bold;
+
+  margin: 3px auto 25px;
+}
+
+.about-container {
+  margin: 8em auto 50px;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  line-height: 2;
+
+  background-color: #ef8172;
+  text-align: center;
+}
+
+#profile-pics {
+  width: 252px;
+  height: 252px;
+  border-radius: 100%;
+
+  margin: 15px;
+}
+
+.bio-container {
+  background-color: #fd9eb9;
+
+  text-align: center;
+  width: 80%;
+
+  margin: 0 auto 0;
+  border-radius: 25px;
+  padding: 2%;
+}
+
+#about-us-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.about-icon:hover {
+  color: #ff4c68;
+}
+
+.contact-container {
+  padding: 5em 4em;
+  text-align: left;
+}
+
+.signup {
+  text-align: center;
+  background-color: #ef8172;
+  border-radius: 25px;
+
+  width: 35%;
+  line-height: 1.5;
+  padding: 1.5em;
+
+  display: inline-block;
+  margin-right: 20%;
+}
+
+.signup p {
+  font-weight: bold;
+  font-size: 35px;
+  color: #fff;
+}
+
+.signup-info {
+  text-align: left;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1;
+
+  padding-bottom: 2em;
+}
+
+.textbox {
+  height: 25px;
+  width: 95%;
+
+  font-size: 20px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+}
+
+.signup-btn {
+  font-size: 25px;
+  color: #000;
+
+  text-align: center;
+  padding: 2%;
+}
+
+.signup-btn:hover {
+  background-color: #ff4c68;
+  color: #fff;
+
+  cursor: pointer;
+}
+
+.socials {
+  text-align: center;
+  vertical-align: top;
+
+  width: 35%;
+  line-height: 1.5;
+  padding: 1.5em;
+
+  display: inline-block;
+}
+
+.social-caption {
+  font-weight: bold;
+  font-size: 35px;
+  color: #000;
+}
+
+.social-cell {
+  font-size: 20px;
+}
+
+.social-icon {
+  vertical-align: middle;
+
+  margin-right: 4%;
+}
+
+.social-tag {
+  display: inline-block;
+}
+
+.social-address {
+  line-height: 1;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+@media (max-width: 1162px) {
+  .signup {
+    width: 100%;
+    display: block;
+  }
+
+  .socials {
+    width: 100%;
+    display: block;
+  }
+}
+
   .accordion {
   background-color: #ccc;
   color: #000;
@@ -167,7 +335,7 @@ header {
 
 #imgdiv {
     padding-left: 0;
-    position: relative; 
+    position: relative;
     height: 100px;
     width: 100%;
     display: flex;
@@ -175,8 +343,8 @@ header {
     justify-content: center;
 }
 #imgdiv::before {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), 
-                                rgba(0, 0, 0, 0.5) ), 
+    background: linear-gradient(rgba(0, 0, 0, 0.5),
+                                rgba(0, 0, 0, 0.5) ),
                                 url('../imgs/banner.jpeg');
     background-size: cover;
     position: absolute;
@@ -192,7 +360,7 @@ h1 {
     color: #fff;
     font-size: x-large;
     text-align: center;
-    
+
 }
 @media only screen and (max-width: 360px) {
     h1 {
