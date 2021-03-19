@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>TinDog: Care</title>
+    <style>
+        #sidenav{display:none}
+        .contentDetails {
+            display: grid;
+            grid-template: 3em auto / auto auto;
+            margin: 0 2em;
+        }
+        .contentTitle {
+            grid-column: 1/3;
+            grid-row: 1/2;
+        }
+        .necessities {
+            margin-right: 1em;
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+        .where {
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+        @media only screen and (max-width: 896px) {
+                .contentRow{
+                    flex-wrap: wrap;
+                }
+                .contentRowRev {
+                    flex-wrap: wrap-reverse;
+                }
+                .contentDetails {
+                    display: grid;
+                    grid-template: 4.5em auto auto / auto;
+                    margin: 0 2em;
+                }
+                .contentTitle {
+                    grid-column: 1/2;
+                    grid-row: 1/2;
+                }
+                .necessities {
+                    margin-right: 1em;
+                    grid-column: 1/2;
+                    grid-row: 2/3;
+                }
+                .where {
+                    grid-column: 1/2;
+                    grid-row: 3/4;
+                }
+            }
+    </style>
+    <script>
+        var openMenu = false;
+        $(document).ready(() => {
+           $("#hamburger").click(menuslide);
+           $("#closeMenu").click(menuslide);
+           $("#sidenav").slideUp();
+       });
+       function menuslide () {
+           if (!openMenu) {
+               $("#hamburger").attr("src", "./imgs/openmenu.png");
+               $("#sidenav").slideDown()
+           } else {
+               $("#hamburger").attr("src", "./imgs/menu.png");
+               $("#sidenav").slideUp()
+           }
+           openMenu = !openMenu;
+       }
+   </script>
+</head>
+
+<body>  
+    <header>
+        <div class="logoBar">
+            <div class="box">
+                <a href="index.html"><img src="./imgs/tindoglogo.png"></a>
+            </div>
+            <div class="box">
+                <h3>TinDog</h3>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="box">
+                <img id="hamburger" style="height: 2em" src="./imgs/menu.png">
+            </div>
+            <div class="box">
+                <a href="index.html"><h4>Home</h4></a>
+            </div>
+            <div class="box">
+                <a href="match.html"><h4>Our Dogs</h4></a>
+            </div>
+            <div class="box">
+                <a href="donate.html"><h4>Donate</h4></a>
+            </div>
+            <div class="box">
+                <a href="care.html"><h4>Care Materials</h4></a>
+            </div>
+            <div class="box">
+                <a href="resources.html"><h4>Owner Resources</h4></a>
+            </div>
+            <div class="box">
+                <a href="about.html"><h4>About TinDog</h4></a>
+            </div>
+            <div class="box">
+                <a href="contact.html"><h4>Contact</h4></a>
+            </div>
+        </div>
+        <div id="sidenav">
+            <a href="index.html">Home</a>
+            <br>
+            <a href="match.html">Our Dogs</a>
+            <br>
+            <a href="donate.html">Donate</a>
+            <br>
+            <a href="care.html">Care Materials</a>
+            <br>
+            <a href="resources.html">Owner Resources</a>
+            <br>
+            <a href="about.html">About TinDog</a>
+            <br>
+            <a href="contact.html">Contact Us</a>
+            <br>
+            <button id="closeMenu">&times;</button>
+        </div>
+    </header>
+
+    <div class='main'>
+        <div id='imgdiv'>
+            <h1>Care: Equipment and Accessories</h1>
+        </div>
+        <div class='contentRow'>
+            <img style="height: 20vw; max-width: 50vw;" 
+            src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3035fb76965389.5c7945b0d0567.gif"
+            alt="gif of dog playing with tennis ball">
+
+            <p style="font-size: 25px; text-align: center; margin-top: 2em;">
+                When bringing a new dog home, it's best to feel confident that you have 
+                access to all of the supplies your furry friend might need. But figuring 
+                out where to begin can be challenging. That's why we're here to help!
+            </p>
+        </div>
+
+    <br/><hr><br/>
+    
+        <div class='contentRowRev'>
+            <div class='contentDetails'>
+                <div class='contentTitle'>
+                    <p style="font-size: 1.6em; text-align: center; margin-top: 10px">
+                        <strong>Food & Nutrition</strong>
+                    </p>
+                </div>
+                <div class='necessities'>
+                    <p style="font-size: 1.4em; text-align: left;">
+                        Necessities include:  
+                        <br/> Food bowl
+                        <br/> Water bowl
+                        <br/> Canned and/or dry food 
+                        <br/> Treats (cookies, bones, etc.)        
+                    </p>
+                </div>
+                <div class='where'>
+                    <p style="font-size: 1.4em; text-align: left;">
+            Where you can buy these items: 
+            <br/> <a href="https://www.amazon.com/Best-Sellers-Pet-Supplies-Dog-Bowls/zgbs/pet-supplies/2975353011"
+                    target="_blank">Amazon</a>
+            <br/> <a href="https://www.petsmart.com/dog/bowls-and-feeders/food-and-water-bowls/"
+                    target="_blank">PetSmart</a>
+            <br/> <a href="https://www.chewy.com/b/food-332"
+                    target="_blank">Chewy</a>
+            <br/> <a href="https://www.barkbox.com/?utm_source=google&utm_medium=cpc&utm_campaign=bb_search_nb_treat_exact&campaignid=9087043184&adgroupid=98707692384&adid=431076051551&gclid=Cj0KCQjw0caCBhCIARIsAGAfuMzyv5paSe1LKNzWJbHEzPnQC-4lRYZsvEQjPIWQ9J-fto8EzssUgVUaAo6PEALw_wcB"
+                    target="_blank">Bark Box</a>           
+        </p>    
+                </div>
+            </div>
+            <img style=" 
+            border: 5px solid #fd9eb9; border-radius: 1em; height: 30vw;" 
+            src="https://images.unsplash.com/photo-1601758228006-964e41e5e8eb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9nJTIwZm9vZHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
+            alt="dog looking at food in bowl">
+        </div>
+    
+    <br/><hr/><br/>
+
+    <div class="contentRow">
+        <img style="border: 5px solid #fd9eb9; height: 30vw; border-radius: 1em;" 
+        src="https://images.unsplash.com/photo-1587169847137-5ff20b28f6fa?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTF8fGRvZyUyMGxlYXNofGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
+        alt="dog looking at food in bowl">
+        <div class='contentDetails'>
+            <div class='contentTitle'>
+                <p style="font-size: 1.6em; text-align: center;">
+                    <strong>Exercise & Outdoors</strong>
+                </p>
+            </div>
+            <div class='necessities'>
+                <p style="font-size: 1.4em; text-align: left;">
+                    Necessities include:  
+                    <br/> Leash (4-6 feet)
+                    <br/> Harness and/or collar
+                    <br/> ID tag  
+                    <br/> Waste bags        
+                </p>  
+            </div>
+            <div class='where'>
+                <p style="font-size: 1.4em; text-align: left;">
+            Where you can buy these items:  
+            <br/> <a href="https://www.chewy.com/b/leashes-346"
+                    target="_blank">Chewy</a>
+            <br/> <a href="https://ruffwear.com/collections/dog-harnesses"
+                    target="_blank">RuffWear</a>
+            <br/> <a href="https://www.petco.com/shop/en/petcostore/category/dog/dog-collars-leashes-and-harnesses/dog-tags-accessories/dog-id-tags"
+                    target="_blank">Petco</a> 
+            <br/> <a href="https://dogbag.com/?gclid=Cj0KCQjw0caCBhCIARIsAGAfuMyLoflLodx6fwt8HMv4uTMHSWdIC_U4tn1rI5mrxtcp8UOdNkwVovEaAmc1EALw_wcB"
+                    target="_blank">Doggie Walk Bags</a>
+            <br/><br/>            
+        </p>  
+            </div>
+        </div>
+    </div>
+    
+    <br/><hr/><br/>
+
+    <div class='contentRowRev'>
+        <div class='contentDetails'>
+            <div class='contentTitle'>
+                <p style="font-size: 1.6em; text-align: center;">
+                    <strong>Hygiene & Cleanliness</strong>
+                </p>
+            </div>
+            <div class='necessities'>
+                <p style="font-size: 1.4em; text-align: left;">
+                    Necessities include:  
+                    <br/> Shampoo & conditioner
+                    <br/> Nail clippers
+                    <br/> Brush and/or comb
+                    <br/> Toothbrush & toothpaste        
+                </p>
+            </div>
+            <div class='where'>
+                <p style="font-size: 1.4em; text-align: left;">
+                    Where you can buy these items:  
+                    <br/> <a href="https://www.skoutshonor.com/collections/pet-grooming-dog-cat?src=google&campaignid=10204351655&utm_term=%2Bdog%20%2Bconditioner&utm_campaign=HM_SNO_Non-Branded_NB&utm_source=adwords&utm_medium=ppc&hsa_acc=8765798122&hsa_cam=10204351655&hsa_grp=101552643586&hsa_ad=439258225661&hsa_src=g&hsa_tgt=kwd-22121898444&hsa_kw=%2Bdog%20%2Bconditioner&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjw0caCBhCIARIsAGAfuMw1b4Ts5fiz4JFxhJJ0nJCWC9QbIOEt_GZ88vp6LMcAojzWfRmIDUIaAkjgEALw_wcB"
+                            target="_blank">Skout's Honor</a>
+                    <br/> <a href="https://www.chewy.com/b/nail-clippers-12835?gclid=Cj0KCQjw0caCBhCIARIsAGAfuMxrrMi-7chQ6pytK7gh-1-sX-WtzkoePjW8ndQ23kdbq-JVjdF1rI4aAkcmEALw_wcB"
+                            target="_blank">Chewy</a>
+                    <br/> <a href="https://www.amazon.com/Best-Sellers-Pet-Supplies-Dog-Brushes/zgbs/pet-supplies/2975363011"
+                            target="_blank">Amazon</a> 
+                    <br/> <a href="https://iheartdogs.com/product/happy-healthy-mint-flavored-dental-rinse-for-plaque-tartar-control-8-oz/?gclid=Cj0KCQjw0caCBhCIARIsAGAfuMxnb4LyH6arbu73VqB6y97_VKZfiKzAysezAszPTJ2lTcFunmHq3C8aAhjDEALw_wcB"
+                            target="_blank">I Heart Dogs</a>
+                    <br/><br/>            
+                </p>  
+            </div>
+        </div>
+        <img style="border: 5px solid #fd9eb9; height: 30vw; border-radius: 1em;" 
+        src="https://images.unsplash.com/photo-1581887936036-3f4f7f0b6679?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fGRvZyUyMGJhdGh8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
+        alt="dog looking at food in bowl">
+    </div>
+    
+    <br/><hr/><br/>
+
+    <div class="contentRow">
+        <img style="border: 5px solid #fd9eb9; height: 30vw; border-radius: 1em;" 
+        src="https://images.unsplash.com/photo-1533764625214-b97671494f23?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDd8fGRvZyUyMGJlZHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
+        alt="dog looking at food in bowl">
+        <div class='contentDetails'>
+            <div class='contentTitle'>
+                <p style="font-size: 1.6em; text-align: center;">
+                    <strong>Housewarming & Comfort</strong>
+                </p>
+            </div>
+            <div class='necessities'>
+                <p style="font-size: 1.4em; text-align: left;">
+                    Necessities include:
+                    <br/> Dog bed
+                    <br/> Absorbent training pads
+                    <br/> First-aid supplies 
+                    <br/> Toys & puzzles      
+                </p>  
+            </div>
+            <div class='where'>
+                <p style="font-size: 1.4em; text-align: left;">
+                    Where you can buy these items:
+                    <br/> <a href="https://www.chewy.com/b/beds-365"
+                            target="_blank">Chewy</a>
+                    <br/> <a href="https://www.petco.com/shop/en/petcostore/category/dog/dog-poop-bags-and-clean-up/dog-pee-pads"
+                            target="_blank">Petco</a>
+                    <br/> <a href="https://www.baxterboo.com/l.cfm/dog-health_first-aid-health/?&gclid=Cj0KCQjw0caCBhCIARIsAGAfuMylMVVRNQInk7I1sgvqLiDNIX9S91NR1hokEGRYv1hmIs-BT249YZEaAmNIEALw_wcB"
+                            target="_blank">Baxter Boo</a> 
+                    <br/> <a href="https://www.amazon.com/Best-Sellers-Pet-Supplies-Dog-Toys/zgbs/pet-supplies/2975413011"
+                            target="_blank">Amazon</a>
+                    <br/><br/>          
+                </p>  
+            </div>
+        </div>
+    </div>
+    
+    <br/><hr><br/>
+    
+    <p style="font-size: 20px; text-align: center; margin-left: 100px; 
+    margin-right: 100px; margin-top: 25px">
+        <strong>Please note: </strong> There are a number of truly <em>fantastic</em> 
+        resources out there, many of which we haven't mentioned here! We'd 
+        highly recommend that you do a bit of extra searching to ensure that the 
+        items you purchase are ideal for your pup. And though it's not listed 
+        above, we cannot help but emphasize, yet again, our #1 piece of advice: 
+        talk to your vet!
+    </p>
+    
+    <br/><br/>
+    </div>
+    
+   
+    
+    
+    
+    
+    
+    
+    
+</body>
+
+
+
+
+</html>
+    
+    
