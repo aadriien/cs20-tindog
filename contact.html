@@ -87,7 +87,9 @@
   </header>
 
   <div class="main">
-    <p id='slogan' style="text-align: center;">Contact Us</p>
+    <div id="imgdiv">
+        <h1>Contact Us!</h1>
+    </div>
   </div>
 
   <div class="contact-container">
@@ -97,22 +99,126 @@
       <form class="signup-info" action="index.html" method="post">
         <label for="fname">First Name:</label> <br><br>
         <input class="textbox" type="text" name="fname" id="fname" value="">
-        <br> <br>
+        <p id="fnameWarn" style='color: red; font-weight: bold; font-size: 20px;'></p>
+        <br> <br id="fwarnBreak">
         <label for="lname">Last Name:</label> <br><br>
         <input class="textbox" type="text" name="lname" id="lname" value="">
-        <br> <br>
+        <p id="lnameWarn" style='color: red; font-weight: bold; font-size: 20px;'></p>
+        <br> <br id="lwarnBreak">
         <label for="email">Email:</label> <br><br>
         <input class="textbox" type="email" name="email" id="email" value="">
-        <br> <br>
+        <p id="emailWarn" style='color: red; font-weight: bold; font-size: 20px;'></p>
+        <br> <br id="emailwarnBreak">
         <label for="phone">Phone Number:</label> <br><br>
         <input class="textbox" type="text" name="phone" id="phone" value="">
-        <br>
+        <p id="phoneWarn" style='color: red; font-weight: bold; font-size: 20px;'></p>
+        <br id="phonewarnBreak">
       </form>
 
-      <button class="signup-btn"type="button" name="button">
+      <button class="signup-btn"type="button" name="signup-btn">
         <i class="fas fa-paw"></i> &nbsp Sign Me Up!
       </button>
     </div>
+
+    <!-- Form Validation -->
+    <script type="text/javascript">
+      //hiding all warnings
+      $("#fnameWarn, #lnameWarn, #emailWarn, #phoneWarn").hide();
+
+      validFName = true;
+      validLName = true;
+      validEmail = true;
+      validPhone = true;
+
+      //on button click
+      $("button[name=signup-btn]").click(function () {
+          if(!$("#fname").val()) {
+            $("#fnameWarn").html("*Missing First Name!");
+            $("#fnameWarn").show();
+            $("#fwarnBreak").hide();
+
+            validFName = false;
+          } else {
+            $("#fnameWarn").hide();
+            $("#fwarnBreak").show();
+
+            validFName = true;
+          }
+
+          if(!$("#lname").val()) {
+            $("#lnameWarn").html("*Missing Last Name!");
+            $("#lnameWarn").show();
+            $("#lwarnBreak").hide();
+
+            validLName = false;
+          } else {
+            $("#lnameWarn").hide();
+            $("#lwarnBreak").show();
+
+            validLName = true;
+          }
+
+          if(!$("#email").val()) {
+            $("#emailWarn").html("*Missing Email!");
+            $("#emailWarn").show();
+            $("#emailwarnBreak").hide();
+
+            validEmail = false;
+          } else {
+            $("#emailWarn").hide();
+            $("#emailwarnBreak").show();
+
+            validEmail = true;
+          }
+
+          //parse phone number
+          phoneString = $("#phone").val();
+          phoneNum = parseInt(phoneString);
+
+          if(!$("#phone").val()) {
+            $("#phoneWarn").html("*Missing Phone Number!");
+            $("#phoneWarn").show();
+            $("#phonewarnBreak").hide();
+
+            validPhone = false;
+          } else if (isNaN(phoneNum) || (phoneString.length != 10) ||
+                     phoneNum.toString().length != 10) {
+            $("#phoneWarn").html("*Invalid Phone Number!");
+            $("#phoneWarn").show();
+            $("#phonewarnBreak").hide();
+
+            validPhone = false;
+          } else {
+            $("#phoneWarn").hide();
+            $("#phonewarnBreak").show();
+
+            validPhone = true;
+          }
+
+          if (validFName && validLName && validEmail && validPhone) {
+            alert("Thank you for signing up! You've been added to the " +
+                  "newsletter list!");
+          } else {
+            alertString = "Your signup was not completed due to the " +
+                          "following errors: \n";
+
+            if (!validFName) {
+              alertString += "- Missing First Name\n";
+            }
+            if (!validLName) {
+              alertString += "- Missing Last Name\n";
+            }
+            if (!validEmail) {
+              alertString += "- Missing Email\n";
+            }
+            if (!validPhone) {
+              alertString += "- Invalid Phone Number\n";
+            }
+
+            alert(alertString);
+          }
+    })
+    </script>
 
     <div class="socials">
       <p class="social-caption">Find us on Social Media!</p>
@@ -146,10 +252,18 @@
       <p class="social-address">419 Boston Ave</p>
       <p class="social-address">Medford, MA 02155</p>
       <a href="" class="social-address">Tel: 123-456-7890</a>
-      <!-- <p class="social-address"></p> -->
-
     </div>
+  </div>
 
+  <div id="donate" style="text-align: center;">
+      <h3>
+          TinDog relies upon your support to stay running!
+      </h3>
+      <p>If you like our service, please consider <a href="donate.html">donating!</a></p>
+      <form action="donate.html" method="get" id="btnform">
+          <button id="donatebtn">Donate Now!</button>
+      </form>
+      <br>
   </div>
 
 

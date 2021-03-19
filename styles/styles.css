@@ -112,10 +112,10 @@ header {
   #sidenav a:hover {
       color: #fff;
   }
-  
+
 /* About us Page */
 .slogan-container {
-    padding-top: 11em;
+    padding-top: 3em;
     text-align: center;
 }
 
@@ -179,7 +179,7 @@ header {
 
 .signup {
   text-align: center;
-  background-color: #fd9eb9;
+  background-color: #ef8172;
   border-radius: 25px;
 
   width: 35%;
