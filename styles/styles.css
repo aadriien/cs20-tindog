@@ -145,7 +145,8 @@ header {
 }
 
 #profile-pics {
-  width: 15%;
+  width: 252px;
+  height: 252px;
   border-radius: 100%;
 
   margin: 15px;
