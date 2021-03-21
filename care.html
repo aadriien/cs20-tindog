@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="care">
+    <meta name="keywords" content="dogs, match, dogcare, tindog">
     <link rel="stylesheet" href="./styles/styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <title>TinDog: Care</title>
@@ -28,13 +30,20 @@
             grid-column: 2/3;
             grid-row: 2/3;
         }
+        .contentRow img {
+            object-fit: contain;
+            height: 25vw;
+            margin-right: 2em;
+            margin-left: 0em;
+        }
+        .contentRowRev img {
+            object-fit: contain;
+            height: 25vw;
+            margin-right: 0em;
+            margin-left: 2em;
+        }
+
         @media only screen and (max-width: 896px) {
-                .contentRow{
-                    flex-wrap: wrap;
-                }
-                .contentRowRev {
-                    flex-wrap: wrap-reverse;
-                }
                 .contentDetails {
                     display: grid;
                     grid-template: 4.5em auto auto / auto;
@@ -52,6 +61,18 @@
                 .where {
                     grid-column: 1/2;
                     grid-row: 3/4;
+                }
+                .contentRow img {
+                    object-fit: contain;
+                    height: 50vw;
+                    margin-right: 0em;
+                    margin-left: 0em;
+                }
+                .contentRowRev img {
+                    object-fit: contain;
+                    height: 50vw;
+                    margin-right: 0em;
+                    margin-left: 0em;
                 }
             }
     </style>
@@ -139,7 +160,7 @@
             src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3035fb76965389.5c7945b0d0567.gif"
             alt="gif of dog playing with tennis ball">
 
-            <p style="font-size: 25px; text-align: center; margin-top: 2em;">
+            <p style="font-size: 25px; text-align: center; margin-top: 2em; margin-right: 20px">
                 When bringing a new dog home, it's best to feel confident that you have 
                 access to all of the supplies your furry friend might need. But figuring 
                 out where to begin can be challenging. That's why we're here to help!
@@ -166,20 +187,19 @@
                 </div>
                 <div class='where'>
                     <p style="font-size: 1.4em; text-align: left;">
-            Where you can buy these items: 
-            <br/> <a href="https://www.amazon.com/Best-Sellers-Pet-Supplies-Dog-Bowls/zgbs/pet-supplies/2975353011"
-                    target="_blank">Amazon</a>
-            <br/> <a href="https://www.petsmart.com/dog/bowls-and-feeders/food-and-water-bowls/"
-                    target="_blank">PetSmart</a>
-            <br/> <a href="https://www.chewy.com/b/food-332"
-                    target="_blank">Chewy</a>
-            <br/> <a href="https://www.barkbox.com/?utm_source=google&utm_medium=cpc&utm_campaign=bb_search_nb_treat_exact&campaignid=9087043184&adgroupid=98707692384&adid=431076051551&gclid=Cj0KCQjw0caCBhCIARIsAGAfuMzyv5paSe1LKNzWJbHEzPnQC-4lRYZsvEQjPIWQ9J-fto8EzssUgVUaAo6PEALw_wcB"
-                    target="_blank">Bark Box</a>           
-        </p>    
+                        Where you can buy these items: 
+                        <br/> <a href="https://www.amazon.com/Best-Sellers-Pet-Supplies-Dog-Bowls/zgbs/pet-supplies/2975353011"
+                                target="_blank">Amazon</a>
+                        <br/> <a href="https://www.petsmart.com/dog/bowls-and-feeders/food-and-water-bowls/"
+                                target="_blank">PetSmart</a>
+                        <br/> <a href="https://www.chewy.com/b/food-332"
+                                target="_blank">Chewy</a>
+                        <br/> <a href="https://www.barkbox.com/?utm_source=google&utm_medium=cpc&utm_campaign=bb_search_nb_treat_exact&campaignid=9087043184&adgroupid=98707692384&adid=431076051551&gclid=Cj0KCQjw0caCBhCIARIsAGAfuMzyv5paSe1LKNzWJbHEzPnQC-4lRYZsvEQjPIWQ9J-fto8EzssUgVUaAo6PEALw_wcB"
+                                target="_blank">Bark Box</a>           
+                    </p>    
                 </div>
             </div>
-            <img style=" 
-            border: 5px solid #fd9eb9; border-radius: 1em; height: 30vw;" 
+            <img style="border: 5px solid #fd9eb9; border-radius: 1em" 
             src="https://images.unsplash.com/photo-1601758228006-964e41e5e8eb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9nJTIwZm9vZHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
             alt="dog looking at food in bowl">
         </div>
@@ -187,17 +207,17 @@
     <br/><hr/><br/>
 
     <div class="contentRow">
-        <img style="border: 5px solid #fd9eb9; height: 30vw; border-radius: 1em;" 
+        <img style="border: 5px solid #fd9eb9; border-radius: 1em" 
         src="https://images.unsplash.com/photo-1587169847137-5ff20b28f6fa?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTF8fGRvZyUyMGxlYXNofGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
-        alt="dog looking at food in bowl">
+        alt="dog on a leash">
         <div class='contentDetails'>
             <div class='contentTitle'>
-                <p style="font-size: 1.6em; text-align: center;">
+                <p style="font-size: 1.6em; text-align: center">
                     <strong>Exercise & Outdoors</strong>
                 </p>
             </div>
             <div class='necessities'>
-                <p style="font-size: 1.4em; text-align: left;">
+                <p style="font-size: 1.4em; text-align: left">
                     Necessities include:  
                     <br/> Leash (4-6 feet)
                     <br/> Harness and/or collar
@@ -206,18 +226,18 @@
                 </p>  
             </div>
             <div class='where'>
-                <p style="font-size: 1.4em; text-align: left;">
-            Where you can buy these items:  
-            <br/> <a href="https://www.chewy.com/b/leashes-346"
-                    target="_blank">Chewy</a>
-            <br/> <a href="https://ruffwear.com/collections/dog-harnesses"
-                    target="_blank">RuffWear</a>
-            <br/> <a href="https://www.petco.com/shop/en/petcostore/category/dog/dog-collars-leashes-and-harnesses/dog-tags-accessories/dog-id-tags"
-                    target="_blank">Petco</a> 
-            <br/> <a href="https://dogbag.com/?gclid=Cj0KCQjw0caCBhCIARIsAGAfuMyLoflLodx6fwt8HMv4uTMHSWdIC_U4tn1rI5mrxtcp8UOdNkwVovEaAmc1EALw_wcB"
-                    target="_blank">Doggie Walk Bags</a>
-            <br/><br/>            
-        </p>  
+                <p style="font-size: 1.4em; text-align: left">
+                    Where you can buy these items:  
+                    <br/> <a href="https://www.chewy.com/b/leashes-346"
+                            target="_blank">Chewy</a>
+                    <br/> <a href="https://ruffwear.com/collections/dog-harnesses"
+                            target="_blank">RuffWear</a>
+                    <br/> <a href="https://www.petco.com/shop/en/petcostore/category/dog/dog-collars-leashes-and-harnesses/dog-tags-accessories/dog-id-tags"
+                            target="_blank">Petco</a> 
+                    <br/> <a href="https://dogbag.com/?gclid=Cj0KCQjw0caCBhCIARIsAGAfuMyLoflLodx6fwt8HMv4uTMHSWdIC_U4tn1rI5mrxtcp8UOdNkwVovEaAmc1EALw_wcB"
+                            target="_blank">Doggie Walk Bags</a>
+                    <br/><br/>            
+                </p>  
             </div>
         </div>
     </div>
@@ -227,12 +247,12 @@
     <div class='contentRowRev'>
         <div class='contentDetails'>
             <div class='contentTitle'>
-                <p style="font-size: 1.6em; text-align: center;">
+                <p style="font-size: 1.6em; text-align: center">
                     <strong>Hygiene & Cleanliness</strong>
                 </p>
             </div>
             <div class='necessities'>
-                <p style="font-size: 1.4em; text-align: left;">
+                <p style="font-size: 1.4em; text-align: left">
                     Necessities include:  
                     <br/> Shampoo & conditioner
                     <br/> Nail clippers
@@ -241,7 +261,7 @@
                 </p>
             </div>
             <div class='where'>
-                <p style="font-size: 1.4em; text-align: left;">
+                <p style="font-size: 1.4em; text-align: left">
                     Where you can buy these items:  
                     <br/> <a href="https://www.skoutshonor.com/collections/pet-grooming-dog-cat?src=google&campaignid=10204351655&utm_term=%2Bdog%20%2Bconditioner&utm_campaign=HM_SNO_Non-Branded_NB&utm_source=adwords&utm_medium=ppc&hsa_acc=8765798122&hsa_cam=10204351655&hsa_grp=101552643586&hsa_ad=439258225661&hsa_src=g&hsa_tgt=kwd-22121898444&hsa_kw=%2Bdog%20%2Bconditioner&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjw0caCBhCIARIsAGAfuMw1b4Ts5fiz4JFxhJJ0nJCWC9QbIOEt_GZ88vp6LMcAojzWfRmIDUIaAkjgEALw_wcB"
                             target="_blank">Skout's Honor</a>
@@ -255,25 +275,25 @@
                 </p>  
             </div>
         </div>
-        <img style="border: 5px solid #fd9eb9; height: 30vw; border-radius: 1em;" 
+        <img style="border: 5px solid #fd9eb9; border-radius: 1em" 
         src="https://images.unsplash.com/photo-1581887936036-3f4f7f0b6679?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fGRvZyUyMGJhdGh8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
-        alt="dog looking at food in bowl">
+        alt="dog in a towel, leaving a bath">
     </div>
     
     <br/><hr/><br/>
 
     <div class="contentRow">
-        <img style="border: 5px solid #fd9eb9; height: 30vw; border-radius: 1em;" 
+        <img style="border: 5px solid #fd9eb9; border-radius: 1em" 
         src="https://images.unsplash.com/photo-1533764625214-b97671494f23?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDd8fGRvZyUyMGJlZHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
-        alt="dog looking at food in bowl">
+        alt="dog sitting in a dog bed">
         <div class='contentDetails'>
             <div class='contentTitle'>
-                <p style="font-size: 1.6em; text-align: center;">
+                <p style="font-size: 1.6em; text-align: center">
                     <strong>Housewarming & Comfort</strong>
                 </p>
             </div>
             <div class='necessities'>
-                <p style="font-size: 1.4em; text-align: left;">
+                <p style="font-size: 1.4em; text-align: left">
                     Necessities include:
                     <br/> Dog bed
                     <br/> Absorbent training pads
@@ -282,7 +302,7 @@
                 </p>  
             </div>
             <div class='where'>
-                <p style="font-size: 1.4em; text-align: left;">
+                <p style="font-size: 1.4em; text-align: left">
                     Where you can buy these items:
                     <br/> <a href="https://www.chewy.com/b/beds-365"
                             target="_blank">Chewy</a>
@@ -300,8 +320,16 @@
     
     <br/><hr><br/>
     
-    <p style="font-size: 20px; text-align: center; margin-left: 100px; 
-    margin-right: 100px; margin-top: 25px">
+    <p style="font-size: 23px; text-align: center; margin-left: 70px; 
+    margin-right: 70px; margin-top: 25px; margin-bottom: 30px">
+        Think you have everything? <a href="https://barkingroyalty.com/wp-content/uploads/2019/02/dogadoptionchecklistpng.png"
+        download="DogChecklist">Download</a> Barking Royalty's checklist 
+        to see how you did! 
+    </p>
+
+    <br/>    
+    
+    <p style="font-size: 18px; text-align: center; margin-left: 100px; margin-right: 100px">
         <strong>Please note: </strong> There are a number of truly <em>fantastic</em> 
         resources out there, many of which we haven't mentioned here! We'd 
         highly recommend that you do a bit of extra searching to ensure that the 
@@ -310,20 +338,9 @@
         talk to your vet!
     </p>
     
-    <br/><br/>
-    </div>
-    
-   
-    
-    
-    
-    
-    
-    
-    
+    <br/><br/><br/>
+    </div>    
 </body>
-
-
 
 
 </html>
