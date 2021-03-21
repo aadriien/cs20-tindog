@@ -3,10 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="contact">
+    <meta name="keywords" content="dogs, match, dogcare, tindog">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TinDog</title>
+    <title>TinDog</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/2b687f3f0a.js" crossorigin="anonymous"></script>
+
+    <style>#sidenav {display: none;}</style>
+    <script>
+        var openMenu = false;
+        $(document).ready(() => {
+            $("#hamburger").click(menuslide);
+            $("#closeMenu").click(menuslide);
+            $("sidenav").slideUp();
+        });
+        function menuslide () {
+            if (!openMenu) {
+                $("#hamburger").attr("src", "./imgs/openmenu.png");
+                $("#sidenav").slideDown()
+            } else {
+                $("#hamburger").attr("src", "./imgs/menu.png");
+                $("#sidenav").slideUp()
+            }
+            openMenu = !openMenu;
+        }
+    </script>
 </head>
 <body>
-    contact
+  <header>
+      <div class="logoBar">
+          <div class="box">
+              <a href="index.html"><img src="./imgs/tindoglogo.png"></a>
+          </div>
+          <div class="box">
+              <h3>TinDog</h3>
+          </div>
+      </div>
+      <div class="nav">
+          <div class="box">
+              <img id="hamburger" style="height: 2em" src="./imgs/menu.png">
+          </div>
+          <div class="box">
+              <a href="index.html"><h4>Home</h4></a>
+          </div>
+          <div class="box">
+              <a href="match.html"><h4>Our Dogs</h4></a>
+          </div>
+          <div class="box">
+              <a href="donate.html"><h4>Donate</h4></a>
+          </div>
+          <div class="box">
+              <a href="care.html"><h4>Care Materials</h4></a>
+          </div>
+          <div class="box">
+              <a href="resources.html"><h4>Owner Resources</h4></a>
+          </div>
+          <div class="box">
+              <a href="about.html"><h4>About TinDog</h4></a>
+          </div>
+          <div class="box">
+              <a href="contact.html"><h4>Contact</h4></a>
+          </div>
+      </div>
+      <div id="sidenav">
+          <a href="index.html">Home</a>
+          <br>
+          <a href="match.html">Our Dogs</a>
+          <br>
+          <a href="donate.html">Donate</a>
+          <br>
+          <a href="care.html">Care Materials</a>
+          <br>
+          <a href="resources.html">Owner Resources</a>
+          <br>
+          <a href="about.html">About TinDog</a>
+          <br>
+          <a href="contact.html">Contact Us</a>
+          <br>
+          <button id="closeMenu">&times;</button>
+      </div>
+  </header>
+
+  <div class="main">
+    <div id="imgdiv">
+        <h1>Contact Us!</h1>
+    </div>
+  </div>
+
+  <div class="contact-container">
+    <div class="signup">
+      <p>Signup for our monthly newsletter!</p>
+
+      <form class="signup-info" action="index.html" method="post">
+        <label for="fname">First Name:</label> <br><br>
+        <input class="textbox" type="text" name="fname" id="fname" value="">
+        <p id="fnameWarn" style='color: red; font-weight: bold; font-size: 20px;'></p>
+        <br> <br id="fwarnBreak">
+        <label for="lname">Last Name:</label> <br><br>
+        <input class="textbox" type="text" name="lname" id="lname" value="">
+        <p id="lnameWarn" style='color: red; font-weight: bold; font-size: 20px;'></p>
+        <br> <br id="lwarnBreak">
+        <label for="email">Email:</label> <br><br>
+        <input class="textbox" type="email" name="email" id="email" value="">
+        <p id="emailWarn" style='color: red; font-weight: bold; font-size: 20px;'></p>
+        <br> <br id="emailwarnBreak">
+        <label for="phone">Phone Number:</label> <br><br>
+        <input class="textbox" type="text" name="phone" id="phone" value="">
+        <p id="phoneWarn" style='color: red; font-weight: bold; font-size: 20px;'></p>
+        <br id="phonewarnBreak">
+      </form>
+
+      <button class="signup-btn"type="button" name="signup-btn">
+        <i class="fas fa-paw"></i> &nbsp Sign Me Up!
+      </button>
+    </div>
+
+    <!-- Form Validation -->
+    <script type="text/javascript">
+      //hiding all warnings
+      $("#fnameWarn, #lnameWarn, #emailWarn, #phoneWarn").hide();
+
+      validFName = true;
+      validLName = true;
+      validEmail = true;
+      validPhone = true;
+
+      //on button click
+      $("button[name=signup-btn]").click(function () {
+          if(!$("#fname").val()) {
+            $("#fnameWarn").html("*Missing First Name!");
+            $("#fnameWarn").show();
+            $("#fwarnBreak").hide();
+
+            validFName = false;
+          } else {
+            $("#fnameWarn").hide();
+            $("#fwarnBreak").show();
+
+            validFName = true;
+          }
+
+          if(!$("#lname").val()) {
+            $("#lnameWarn").html("*Missing Last Name!");
+            $("#lnameWarn").show();
+            $("#lwarnBreak").hide();
+
+            validLName = false;
+          } else {
+            $("#lnameWarn").hide();
+            $("#lwarnBreak").show();
+
+            validLName = true;
+          }
+
+          if(!$("#email").val()) {
+            $("#emailWarn").html("*Missing Email!");
+            $("#emailWarn").show();
+            $("#emailwarnBreak").hide();
+
+            validEmail = false;
+          } else {
+            $("#emailWarn").hide();
+            $("#emailwarnBreak").show();
+
+            validEmail = true;
+          }
+
+          //parse phone number
+          phoneString = $("#phone").val();
+          phoneNum = parseInt(phoneString);
+
+          if(!$("#phone").val()) {
+            $("#phoneWarn").html("*Missing Phone Number!");
+            $("#phoneWarn").show();
+            $("#phonewarnBreak").hide();
+
+            validPhone = false;
+          } else if (isNaN(phoneNum) || (phoneString.length != 10) ||
+                     phoneNum.toString().length != 10) {
+            $("#phoneWarn").html("*Invalid Phone Number!");
+            $("#phoneWarn").show();
+            $("#phonewarnBreak").hide();
+
+            validPhone = false;
+          } else {
+            $("#phoneWarn").hide();
+            $("#phonewarnBreak").show();
+
+            validPhone = true;
+          }
+
+          if (validFName && validLName && validEmail && validPhone) {
+            alert("Thank you for signing up! You've been added to the " +
+                  "newsletter list!");
+          } else {
+            alertString = "Your signup was not completed due to the " +
+                          "following errors: \n";
+
+            if (!validFName) {
+              alertString += "- Missing First Name\n";
+            }
+            if (!validLName) {
+              alertString += "- Missing Last Name\n";
+            }
+            if (!validEmail) {
+              alertString += "- Missing Email\n";
+            }
+            if (!validPhone) {
+              alertString += "- Invalid Phone Number\n";
+            }
+
+            alert(alertString);
+          }
+    })
+    </script>
+
+    <div class="socials">
+      <p class="social-caption">Find us on Social Media!</p>
+
+      <div class="social-cell">
+        <i class="fas fa-envelope fa-3x social-icon"></i>
+        <div class="social-tag">
+          <a href="mailto: tindog@tindog.com">tindog@tindog.com</a>
+        </div>
+      </div>
+
+      <br><br>
+
+      <div class="social-cell">
+        <i class="fab fa-instagram fa-3x social-icon"></i>
+        <div class="social-tag">
+          <a href="">@tindog_officialIG</a>
+        </div>
+      </div>
+
+      <br><br>
+
+      <div class="social-cell">
+        <i class="fab fa-twitter fa-3x social-icon"></i>
+        <div class="social-tag">
+          <a href="">@tindog_officialTW</a>
+        </div>
+      </div>
+
+      <br><br>
+      <p class="social-address">419 Boston Ave</p>
+      <p class="social-address">Medford, MA 02155</p>
+      <a href="" class="social-address">Tel: 123-456-7890</a>
+    </div>
+  </div>
+
+  <div id="donate" style="text-align: center;">
+      <h3>
+          TinDog relies upon your support to stay running!
+      </h3>
+      <p>If you like our service, please consider <a href="donate.html">donating!</a></p>
+      <form action="donate.html" method="get" id="btnform">
+          <button id="donatebtn">Donate Now!</button>
+      </form>
+      <br>
+  </div>
+
+
 </body>
 </html>
