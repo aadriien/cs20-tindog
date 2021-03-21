@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>#sidenav{display:none}</style>
+    <script>
+        var openMenu = false;
+        $(document).ready(() => {
+        	$("#hamburger").click(menuslide);
+            $("#closeMenu").click(menuslide);
+            $("#sidenav").slideUp();
+        });
+        function menuslide () {
+            if (!openMenu) {
+                $("#hamburger").attr("src", "./imgs/openmenu.png");
+                $("#sidenav").slideDown()
+            } else {
+                $("#hamburger").attr("src", "./imgs/menu.png");
+                $("#sidenav").slideUp()
+            }
+            openMenu = !openMenu;
+       }
+   </script>
+
+    <style type="text/css">
+
+    	.formTitle {
+    		display: flex;
+    		align-content: center;
+		    justify-content: center;
+		    padding: 1em 2em;
+    	}
+
+    	.donationContainer {
+    		display: flex;
+		    align-content: center;
+		    justify-content: center;
+		    
+    	}
+
+    	.donationForm {
+    		padding: 1em;
+    		border: 5px solid #fd9eb9;
+    		border-radius: 1em;
+    		background: rgb(255,255,255);
+			background: linear-gradient(55deg, rgba(255,255,255,0) 0%, rgba(253,158,185,1) 70%, rgba(254,60,114,1) 100%);
+    	}
+    	
+    	.warning {
+    		color: red; 
+    		font-weight: normal; 
+    		font-size: 16px;
+    		display: inline-block;
+    		padding: 0;
+    		margin: 0;
+
+    	}
+
+    	.fire
+
+    	
+    	
+    	
+    </style>
+    
+    <title>TinDog: Donate</title>
+</head>
+
+<body>
+    
+    <header>
+        <div class="logoBar">
+            <div class="box">
+                <a href="index.html"><img src="./imgs/tindoglogo.png"></a>
+            </div>
+            <div class="box">
+                <h3>TinDog</h3>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="box">
+                <img id="hamburger" style="height: 2em" src="./imgs/menu.png">
+            </div>
+            <div class="box">
+                <a href="index.html"><h4>Home</h4></a>
+            </div>
+            <div class="box">
+                <a href="match.html"><h4>Our Dogs</h4></a>
+            </div>
+            <div class="box">
+                <a href="donate.html"><h4>Donate</h4></a>
+            </div>
+            <div class="box">
+                <a href="care.html"><h4>Care Materials</h4></a>
+            </div>
+            <div class="box">
+                <a href="resources.html"><h4>Owner Resources</h4></a>
+            </div>
+            <div class="box">
+                <a href="about.html"><h4>About TinDog</h4></a>
+            </div>
+            <div class="box">
+                <a href="contact.html"><h4>Contact</h4></a>
+            </div>
+        </div>
+        <div id="sidenav">
+            <a href="index.html">Home</a>
+            <br>
+            <a href="match.html">Our Dogs</a>
+            <br>
+            <a href="donate.html">Donate</a>
+            <br>
+            <a href="care.html">Care Materials</a>
+            <br>
+            <a href="resources.html">Owner Resources</a>
+            <br>
+            <a href="about.html">About TinDog</a>
+            <br>
+            <a href="contact.html">Contact Us</a>
+            <br>
+            <button id="closeMenu">&times;</button>
+        </div>
+    </header>
+
+
+
+    <div class="main">
+	    <div id="imgdiv">
+	    	<h1>Support Us</h1>
+	    </div>
+	    <div class="contentRow">
+		    <img style="border: 5px solid #fd9eb9; max-width: 40vw; height:30vw; border-radius: 1em;" 
+		    src="https://placedog.net/800/640/g?id=22"
+		    alt="dog with gold fur lying down looking at you">
+
+		     <p style="font-size: 25px; text-align: center; margin-top: 2em;">
+		     	Hey, give us all your money
+		     </p>
+	    </div>
+	     
+	    <div class="formTitle"><h2>Support our work!</h2></div>
+
+	    <div class="donationContainer">
+	    	<div class="donationForm">
+				<form name="info" id="info" action="index.html" method="post">
+
+				    &nbsp<label for="fname">First Name</label>
+				    <div class="fname warning" hidden="true">*</div><br>
+					&nbsp<input type="text" inputmode="text" name="fname" class="fname" placeholder="John" required="true">
+					<br><br>
+
+				    &nbsp<label for="lname">Last Name</label>
+				    <div class="lname warning" hidden="true">*</div><br>
+				    &nbsp<input type="text" inputmode="text" name="lname" class="lname" placeholder="Smith" required="true">
+				    <br><br>
+
+				    &nbsp<label for="email">Email</label>
+				    <div class="email warning" hidden="true">*</div><br>
+				    &nbsp<input type="email" name="email" class="email" placeholder="example@gmail.com" required="true">
+				    <br><br>
+
+				    &nbsp<label for="donation">Amount</label>
+				    <div class="donation warning" hidden="true">*</div><br>
+				    $<input type="number" name="donation" class="donation" placeholder="5.00" step="0.01" min="5.00" required="true">
+				    <br><br>
+
+				    &nbsp<label for="card">Credit Card</label>
+				    <div class="card warning" hidden="true">*</div><br>
+				    &nbsp<input type="tel" name="card" class="card" inputmode="numeric" placeholder="XXXX XXXX XXXX XXXX"  maxlength="19" pattern="[0-9\s]{13,19}" title="Use spaces" required="true">
+				    <br><br>
+
+				    &nbsp<label for="expDate">Expiration Date</label>
+				    <div class="expDate warning" hidden="true">*</div><br>
+				    &nbsp<input type="month" name="expDate"  class="expDate" max="2030-01" required="">
+				    <br><br>
+
+				    &nbsp<label for="secCode">Security Code</label>
+				    <div class="secCode warning" hidden="true">*</div><br>
+				    &nbsp<input type="number" inputmode="numeric" name="secCode" class="secCode" inputmode="numeric" placeholder="XXX" required="true">
+				    <br><br>
+
+				   
+				    &nbsp<label>Would you like this to be a recurring monthly donation?</label>
+				    &nbsp<input type="checkbox" name="monthly" class="monthly" checked="true"><br><br>
+
+				    
+				</form>
+				<button id="donatebtn" onclick="test()">Submit</button>
+			</div>
+		
+		</div>
+		
+
+		<!-- 
+		<img style="float: right; margin-left: 80px; margin-right: 60px;
+	    border: 2px solid #000; max-height: 350px;" 
+	    src="https://placedog.net/800/640/?random"
+	    alt="cute dog">
+	    /-->
+    </div>
+
+	<script type="text/javascript">
+		
+		
+		
+
+		var t1;
+		var d = new Date();
+		var expdate = document.info.expDate;	
+		var today = String(d.getFullYear()) + "-" + String(d.getMonth()+2).padStart(2,'0')
+		expdate.min = today;
+		//expdate.setAttribute('min', today);
+		console.log(expdate.min);
+
+		function test() {
+			
+			//alert(d.getFullYear() + '-' + d.getMonth().padStart(2,'0'));
+			var formID = "info";
+			var form = document.getElementById(formID);
+			validate_form(form);
+			t1 = document.info.fname.value;
+			console.log("it works!");
+			console.log(t1);
+			//alert(t1);
+			var t2 = document.info.donation;
+			//alert(t2.validity.valueMissing);
+			 
+			//var infoDoc = document.getElementsByClassName('infos');
+			var infoDoc = document.info;
+			//infoDoc.hidden = true;
+			//document.getElementById('temp').innerHTML = t1;
+			//alert("end");
+		}
+
+		function validate_form(form) {
+			var validForm;
+			for (var i = 0; i < form.length; i++) {
+				console.log(i);
+				if(validate_element(form[i]) == false) {
+					classs = form[i].className;
+					console.log(classs);
+					$('dive.'+classs).show();
+				}
+				
+			}
+			//alert("horray!");
+			//alert(form[0].value);
+			
+			return;
+		}
+
+		function validate_element(input) {
+			console.log('hi');
+			console.log(input.name);
+			console.log(input.value);
+			console.log(input.className);
+
+			var validityState = input.validity;
+
+			/*if (validityState.valid == true) {
+				input.setCustomValidity('');
+  				input.reportValidity();
+  				console.log('all good');
+  				return true;
+			}*/
+			if (validityState.badInput == true) {
+				input.setCustomValidity('Uhhh something broke! Please try again');
+  				input.reportValidity();
+  				console.log('bad input');
+  				return false;
+			}
+			
+			else if (validityState.patternMismatch == true) {
+				input.setCustomValidity('Please enter your information following the pattern: ' + input.title + ' i.e. ' + input.placeholder);
+  				input.reportValidity();
+  				console.log('pattern mismatch');
+  				return false;
+			}
+			else if (validityState.rangeOverflow == true) {
+				input.setCustomValidity('The number you entered for ' + input.name + ' is too high. Please enter a number below ' + input.max);
+  				input.reportValidity();
+  				console.log('overflow');
+  				return false;
+			}
+			else if (validityState.rangeUnderflow == true) {
+				input.setCustomValidity('The number must be above ' + input.min);
+  				input.reportValidity();
+  				console.log('underflow');
+  				return false;
+			}
+			else if (validityState.rangeOverflow == true) {
+				input.setCustomValidity('The number must be below ' + input.max);
+  				input.reportValidity();
+  				console.log('overflow');
+  				return false;
+			}
+			else if (validityState.stepMismatch == true) {
+				input.setCustomValidity(input.value + ' is not divisbile by ' + input.step);
+  				input.reportValidity();
+  				console.log('step mismatch');
+  				return false;
+			}
+			else if (validityState.tooLong == true) {
+				input.setCustomValidity('Too much! Make your input shorter than ' + input.max);
+  				input.reportValidity();
+  				console.log('too long');
+  				return false;
+			}
+			else if (validityState.tooShort == true) {
+				input.setCustomValidity('Too little! Make your input longer than ' + input.min);
+  				input.reportValidity();
+  				console.log('too short');
+  				return false;
+			}
+			
+			else if (validityState.typeMismatch == true) {
+				//input.setCustomValidity('Missing type syntax');
+  				input.reportValidity();
+  				console.log('type mismatch');
+  				return false;
+			}
+			
+			else if (validityState.valueMissing == true) {
+				input.setCustomValidity('This field is required');
+  				input.reportValidity();
+  				console.log('empty input');
+  				return false;
+			}
+			else {
+				input.setCustomValidity('');
+				input.reportValidity();
+				return true;
+			}
+
+
+			
+		}
+	</script>
+
+</body>
+</html>
