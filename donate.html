@@ -60,7 +60,11 @@
 
     	}
 
-    	.fire
+    	.contentDetails {
+                    display: grid;
+                    grid-template: 4.5em auto auto / auto;
+                    margin: 0 2em;
+                }
 
     	
     	
@@ -136,17 +140,19 @@
 		    <img style="border: 5px solid #fd9eb9; max-width: 40vw; height:30vw; border-radius: 1em;" 
 		    src="https://placedog.net/800/640/g?id=22"
 		    alt="dog with gold fur lying down looking at you">
-
-		     <p style="font-size: 25px; text-align: center; margin-top: 2em;">
-		     	Hey, give us all your money
-		     </p>
+		    <div class="contentDetails">
+		    	<p style="font-size: 1.5em; text-align: center;">
+		     	Here at TinDog, all donations are used to help run our operation and further our goal of finding loving homes for our dogs
+		    	 </p>
+		    </div>
+		     
 	    </div>
 	     
 	    <div class="formTitle"><h2>Support our work!</h2></div>
 
 	    <div class="donationContainer">
 	    	<div class="donationForm">
-				<form name="info" id="info" action="index.html" method="post">
+				<form name="info" id="info" action="donate.html" method="post">
 
 				    &nbsp<label for="fname">First Name</label>
 				    <div class="fname warning" hidden="true">*</div><br>
@@ -175,7 +181,7 @@
 
 				    &nbsp<label for="expDate">Expiration Date</label>
 				    <div class="expDate warning" hidden="true">*</div><br>
-				    &nbsp<input type="month" name="expDate"  class="expDate" max="2030-01" required="">
+				    &nbsp<input type="month" name="expDate"  class="expDate" max="2030-01" required="true">
 				    <br><br>
 
 				    &nbsp<label for="secCode">Security Code</label>
@@ -187,86 +193,57 @@
 				    &nbsp<label>Would you like this to be a recurring monthly donation?</label>
 				    &nbsp<input type="checkbox" name="monthly" class="monthly" checked="true"><br><br>
 
-				    
+				    <button id="donatebtn" onclick="check()">Submit</button>
 				</form>
-				<button id="donatebtn" onclick="test()">Submit</button>
+				
 			</div>
 		
 		</div>
-		
-
-		<!-- 
-		<img style="float: right; margin-left: 80px; margin-right: 60px;
-	    border: 2px solid #000; max-height: 350px;" 
-	    src="https://placedog.net/800/640/?random"
-	    alt="cute dog">
-	    /-->
     </div>
 
 	<script type="text/javascript">
 		
-		
-		
-
-		var t1;
+		//Set the minimum expiration date to one month after the current month
 		var d = new Date();
 		var expdate = document.info.expDate;	
 		var today = String(d.getFullYear()) + "-" + String(d.getMonth()+2).padStart(2,'0')
 		expdate.min = today;
-		//expdate.setAttribute('min', today);
-		console.log(expdate.min);
-
-		function test() {
-			
-			//alert(d.getFullYear() + '-' + d.getMonth().padStart(2,'0'));
+		
+		
+		//Form checking function
+		function check(formID) {
 			var formID = "info";
 			var form = document.getElementById(formID);
-			validate_form(form);
-			t1 = document.info.fname.value;
-			console.log("it works!");
-			console.log(t1);
-			//alert(t1);
-			var t2 = document.info.donation;
-			//alert(t2.validity.valueMissing);
-			 
-			//var infoDoc = document.getElementsByClassName('infos');
-			var infoDoc = document.info;
-			//infoDoc.hidden = true;
-			//document.getElementById('temp').innerHTML = t1;
-			//alert("end");
+			if (validate_form(form)) {
+				alert("Thank you for your donation!");
+			}
+			else {
+				alert("Please try again");
+			}
+			
 		}
 
+		//Form validation
 		function validate_form(form) {
-			var validForm;
+			var validForm = true;
 			for (var i = 0; i < form.length; i++) {
 				console.log(i);
 				if(validate_element(form[i]) == false) {
-					classs = form[i].className;
-					console.log(classs);
-					$('dive.'+classs).show();
+					elementClass = form[i].className;
+					console.log(elementClass);
+					$('div.'+elementClass).show();
+					validForm = false;
 				}
 				
 			}
-			//alert("horray!");
-			//alert(form[0].value);
 			
-			return;
+			return validForm;
 		}
 
+		//Form element validation
 		function validate_element(input) {
-			console.log('hi');
-			console.log(input.name);
-			console.log(input.value);
-			console.log(input.className);
 
 			var validityState = input.validity;
-
-			/*if (validityState.valid == true) {
-				input.setCustomValidity('');
-  				input.reportValidity();
-  				console.log('all good');
-  				return true;
-			}*/
 			if (validityState.badInput == true) {
 				input.setCustomValidity('Uhhh something broke! Please try again');
   				input.reportValidity();
@@ -318,12 +295,10 @@
 			}
 			
 			else if (validityState.typeMismatch == true) {
-				//input.setCustomValidity('Missing type syntax');
   				input.reportValidity();
   				console.log('type mismatch');
   				return false;
 			}
-			
 			else if (validityState.valueMissing == true) {
 				input.setCustomValidity('This field is required');
   				input.reportValidity();
@@ -335,9 +310,6 @@
 				input.reportValidity();
 				return true;
 			}
-
-
-			
 		}
 	</script>
 
