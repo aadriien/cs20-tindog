@@ -54,7 +54,7 @@
     </style>
     <script>
         var openMenu = false;
-        var srcString = "https://placedog.net/400/400?id="
+        var srcString = "./imgs/"
         var originalDogArr = [
                             {
                                 "name": "Jeffrey",
@@ -185,7 +185,7 @@
                         break;
                 }
                 html +=     `<div class="card" id='${d.name}'>
-                                <img src="${srcString + d.img}">
+                                <img src="${srcString + d.img + ".jpeg"}">
                                 <div class="info"> 
                                 <h3 style="margin: 0 auto">${d.name}, ${d.age}</h3>
                                     <div class="specifics">
