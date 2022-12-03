@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body {
+    font-family: Poppins, Arial, sans-serif;
+    margin: 0;
+}
+
+.logoBar {
+    background-color: #fe3c72;
+    width: 100%;
+    margin: 0px;
+    margin-top: -1.2em;
+    padding-bottom: 2em;
+    height: 3.4em;
+    z-index: 9999;
+    position: relative;
+    align-items: center;
+}
+
+.main {
+    padding-top: 6.8em;
+}
+
+#text {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#sidenav {
+    width: 250px;
+    background-color: #fd9eb9;
+    z-index: 9999;
+    padding-left: .5em;
+}
+#sidenav a {
+    font-size: x-large;
+}
+#closeMenu {
+    font-size: 3em;
+    background-color: transparent;
+    border-color: transparent;
+    margin-left: 140px;
+}
+
+#closeMenu:hover {
+    color: #fff;
+}
+
+.nav {
+    background-color: #fd9eb9;
+    width: 100%;
+    font-size: 1.2em;
+    z-index: 999;
+    height: 3em;
+    position: relative;
+}
+
+a img {
+    height: 2em;
+    margin-left: .5em;
+}
+
+.logoBar h3 {
+    color: black;
+    font-size: 2em;
+}
+
+header {
+    width: 100vw;
+    margin: 0px;
+    margin-top: -1em;
+    position: fixed;
+    z-index: 99999;
+}
+.logoBar, .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    overflow: hidden;
+  }
+
+  .box {
+    /* flex: 1 1 150px;  Stretching: */
+    flex: 0 1 auto;
+    margin: 5px;
+    vertical-align: top;
+  }
+  .box h4 {
+      margin: .2em;
+  }
+
+  a {
+      text-decoration: none;
+      color: #000;
+      margin-bottom: 0;
+  }
+
+  .main a {
+    text-decoration: none;
+    color: #fd9eb9;
+    margin-bottom: 0;
+  }
+
+  a:hover {
+      color: #fe3c72;
+  }
+
+  .box a:hover {
+      color: #fff;
+  }
+
+  #sidenav a:hover {
+      color: #fff;
+  }
+
+/* About us Page */
+.slogan-container {
+    padding-top: 3em;
+    text-align: center;
+}
+
+#slogan {
+  font-size: 80px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  margin-bottom: 5px;
+}
+
+#slogan-caption {
+  font-size: 25px;
+  font-weight: bold;
+
+  margin: 3px auto 25px;
+}
+
+.about-container {
+  margin: 8em auto 50px;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  line-height: 2;
+
+  background-color: #ef8172;
+  text-align: center;
+}
+
+#profile-pics {
+  width: 252px;
+  height: 252px;
+  border-radius: 100%;
+
+  margin: 15px;
+}
+
+.bio-container {
+  background-color: #fd9eb9;
+
+  text-align: center;
+  width: 80%;
+
+  margin: 0 auto 0;
+  border-radius: 25px;
+  padding: 2%;
+}
+
+#about-us-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.about-icon:hover {
+  color: #ff4c68;
+}
+
+.contact-container {
+  padding: 5em 4em;
+  text-align: left;
+}
+
+.signup {
+  text-align: center;
+  background-color: #ef8172;
+  border-radius: 25px;
+
+  width: 35%;
+  line-height: 1.5;
+  padding: 1.5em;
+
+  display: inline-block;
+  margin-right: 20%;
+}
+
+.signup p {
+  font-weight: bold;
+  font-size: 35px;
+  color: #fff;
+}
+
+.signup-info {
+  text-align: left;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1;
+
+  padding-bottom: 2em;
+}
+
+.textbox {
+  height: 25px;
+  width: 95%;
+
+  font-size: 20px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+}
+
+.signup-btn {
+  font-size: 25px;
+  color: #000;
+
+  text-align: center;
+  padding: 2%;
+}
+
+.signup-btn:hover {
+  background-color: #ff4c68;
+  color: #fff;
+
+  cursor: pointer;
+}
+
+.socials {
+  text-align: center;
+  vertical-align: top;
+
+  width: 35%;
+  line-height: 1.5;
+  padding: 1.5em;
+
+  display: inline-block;
+}
+
+.social-caption {
+  font-weight: bold;
+  font-size: 35px;
+  color: #000;
+}
+
+.social-cell {
+  font-size: 20px;
+}
+
+.social-icon {
+  vertical-align: middle;
+
+  margin-right: 4%;
+}
+
+.social-tag {
+  display: inline-block;
+}
+
+.social-address {
+  line-height: 1;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+@media (max-width: 1162px) {
+  .signup {
+    width: 100%;
+    display: block;
+  }
+
+  .socials {
+    width: 100%;
+    display: block;
+  }
+}
+
+  .accordion {
+  background-color: #ffe6e6;
+  color: #000;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  border: 2px solid #ff4c68;
+  border-radius: 28px;
+  outline: none;
+  transition: 0.6s;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  text-align: center;
+  display: none;
+  overflow: hidden;
+}
+
+.active, .accordion:hover {
+  background-color: #fd9eb9;
+}
+
+  #donatebtn {
+    padding: 1em;
+    border-radius: 2em;
+    border: .2em solid #fd9eb9;
+    font-size: medium;
+    background-color: #fff;
+    width: 40vw;
+  }
+
+  #donatebtn:hover {
+    border-color: #fe3c72;
+    background-color: #fd9eb9;
+  }
+
+  @media only screen and (max-width: 940px) {
+    #btnform {
+        margin: auto auto;
+        float: none;
+        position: relative;
+        width: 80vw;
+    }
+    #donatebtn {
+        width: 100%;
+    }
+}
+
+#imgdiv {
+    padding-left: 0;
+    position: relative;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#imgdiv::before {
+    background: linear-gradient(rgba(0, 0, 0, 0.5),
+                                rgba(0, 0, 0, 0.5) ),
+                                url('../imgs/banner.jpeg');
+    background-size: cover;
+    position: absolute;
+    content: "";
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.60;
+}
+h1 {
+    position: relative;
+    color: #fff;
+    font-size: x-large;
+    text-align: center;
+
+}
+@media only screen and (max-width: 360px) {
+    h1 {
+        font-size: large;
+    }
+}
+
+.contentRow p {
+    flex-wrap: wrap;
+    font-size: 2vw;
+    margin-left: 2em; 
+    margin-right: 2em;
+}
+
+.contentRow, .contentRowRev {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 1em 2em;
+}
+.contentRow img {
+    margin-right: 2em;
+    object-fit: contain;
+    max-width: 36vw; 
+    max-height: 24vw;
+}
+
+@media only screen and (max-width: 600px) {
+    .contentRow{
+        flex-wrap: wrap;
+    }
+    .contentRowRev {
+        flex-wrap: wrap-reverse;
+    }
+    .contentRow p {
+        font-size: 1.25em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .contentRow img {
+        margin-right: 0;
+        object-fit: contain;
+        max-width: 72vw; 
+        max-height: 48vw;
+    }
+    .contentRowRev img {
+        object-fit: contain;
+        margin-right: 0;
+    }
+}
